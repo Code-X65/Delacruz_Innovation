@@ -1,6 +1,6 @@
 import { ArrowRight, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
 import React from 'react';
-import Podcast from '../Assets/Images/podcast.png';
+import Podcast from '../assets/Images/podcast.png';
 const TuneIn = () => {
   return (
     <>
