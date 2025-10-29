@@ -6,16 +6,19 @@ import BrandEcoSyst from '../Components/BandEcoSystem'
 import AboutFeatures from '../Components/AboutFeatures'
 import FeaturedImpact from '../Components/FeaturedImpact'
 import FAQ from '../Components/FQA'
+import OurHistory from '../Components/OurHistory'
+import MissionVisionValues from '../Components/MissionVission'
 const AboutPage = () => {
   return (
     <>
     <div>
          <AboutHero />
+         <OurHistory />
     {/* <BetterBusiness /> */}
-    <AboutFeatures />
+    <MissionVisionValues />
+    {/* <AboutFeatures /> */}
     <BrandEcoSyst />
     <FeaturedImpact />
-    <MissionVision />
     <FAQ />
     </div>
     </>

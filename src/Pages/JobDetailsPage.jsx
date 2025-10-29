@@ -64,19 +64,19 @@ const JobDetailsPage = () => {
 
         {/* Description */}
         <div className="mb-8">
-          <p className="text-gray-300 leading-relaxed">{job.description}</p>
+          <p className="text-gray-100 leading-relaxed">{job.description}</p>
         </div>
 
         {/* Your Impact */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-purple-400 mb-4">YOUR IMPACT</h2>
           <p className="text-purple-300 text-lg mb-4">{job.impact}</p>
-          <p className="text-gray-300 leading-relaxed mb-4">{job.impactDetails}</p>
+          <p className="text-gray-100 leading-relaxed mb-4">{job.impactDetails}</p>
           
           {job.responsibilities && (
             <div className="mt-4">
-              <p className="text-gray-300 mb-2">Your responsibilities include:</p>
-              <ul className="text-gray-300 space-y-2">
+              <p className="text-gray-100 mb-2">Your responsibilities include:</p>
+              <ul className="text-gray-100 space-y-2">
                 {job.responsibilities.map((resp, idx) => (
                   <li key={idx}>• {resp}</li>
                 ))}
@@ -88,15 +88,15 @@ const JobDetailsPage = () => {
         {/* Your Growth */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-purple-400 mb-4">YOUR GROWTH</h2>
-          <p className="text-gray-300 leading-relaxed">{job.growth}</p>
+          <p className="text-gray-100 leading-relaxed">{job.growth}</p>
         </div>
 
         {/* Qualifications */}
         <div className="mb-8 bg-purple-900 bg-opacity-30 p-6 rounded-lg">
-          <h2 className="text-2xl font-bold text-purple-400 mb-4">YOUR QUALIFICATION SKILLS</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">YOUR QUALIFICATION SKILLS</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {job.qualifications.map((qual, idx) => (
-              <div key={idx} className="text-gray-300">
+              <div key={idx} className="text-gray-100">
                 <p>{qual}</p>
               </div>
             ))}
@@ -108,13 +108,13 @@ const JobDetailsPage = () => {
           <div>
             <h3 className="text-xl font-bold text-white mb-3">Industries</h3>
             {job.industries.map((industry, idx) => (
-              <p key={idx} className="text-gray-300">{industry}</p>
+              <p key={idx} className="text-gray-100">{industry}</p>
             ))}
           </div>
           <div>
             <h3 className="text-xl font-bold text-white mb-3">Capabilities</h3>
             {job.capabilities.map((capability, idx) => (
-              <p key={idx} className="text-gray-300">{capability}</p>
+              <p key={idx} className="text-gray-100">{capability}</p>
             ))}
           </div>
         </div>

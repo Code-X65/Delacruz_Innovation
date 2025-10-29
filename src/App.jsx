@@ -2,6 +2,8 @@ import React, { Suspense, lazy, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
+import PersonalInformation from './Components/PersonalInformation'
+import JobPortalApp from './Pages/JobPortalApp'
 
 // Loading component
 const LoadingSpinner = () => (
@@ -41,6 +43,7 @@ const InsightDetailPage = lazy(() => import('./Pages/InsightDetailPage'))
 const JobListingsApp = lazy(() => import('./Pages/JobListingsApp'))
 const JobDetailsPage = lazy(() => import('./Pages/JobDetailsPage'))
 const NotFound = lazy(() => import('./Pages/NotFound'))
+const ApplicationForm = lazy(() => import('./Components/ApplicationForm'))
 
 // Scroll to top component
 const ScrollToTop = () => {
@@ -67,8 +70,10 @@ const AppRoutes = () => {
           <Route path="/Offices" element={<OfficesSection />} />
           <Route path="/insights" element={<InsightsListPage />} />
           <Route path="/insights/:insightId" element={<InsightDetailPage />} />
-          <Route path="/jobs" element={<JobListingsApp />} />
+          <Route path="/jobs" element={<JobPortalApp />} />
           <Route path="/jobs/:jobId" element={<JobDetailsPage />} />
+          <Route path="/jobs/apply" element={<ApplicationForm />} />
+          <Route path="/application" element={<PersonalInformation />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

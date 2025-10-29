@@ -50,11 +50,11 @@ const ServiceDetailsPage = () => {
             {service.title}
           </h1>
           
-          <p className="text-gray-400 text-base sm:text-lg leading-relaxed max-w-4xl mb-6">
+          <p className="text-gray-200 text-base sm:text-lg leading-relaxed max-w-4xl mb-6">
             {service.tagline}
           </p>
           
-          <p className="text-gray-300 text-base leading-relaxed max-w-4xl">
+          <p className="text-gray-100 text-base leading-relaxed max-w-4xl">
             {service.description}
           </p>
         </div>
@@ -65,13 +65,13 @@ const ServiceDetailsPage = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`} style={{ transitionDelay: '100ms' }}>
             <div className="bg-gray-900/50 backdrop-blur-sm border border-purple-700/30 rounded-2xl p-6 sm:p-8">
-              <div className="flex items-center gap-4 mb-4">
+              <div className="flex  gap-4 mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl flex items-center justify-center flex-shrink-0">
                   <Shield className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-1">{service.subtitle}</h3>
-                  <p className="text-gray-300 text-sm">
+                  <h3 className="text-xl font-bold text-white mb-3">{service.subtitle}</h3>
+                  <p className="text-gray-100 text-sm">
                     <span className="text-purple-400 font-semibold">Licenses:</span> {service.licenses}
                   </p>
                 </div>
@@ -98,7 +98,7 @@ const ServiceDetailsPage = () => {
                   <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-br from-purple-600 to-purple-700 flex items-center justify-center group-hover/item:scale-110 transition-transform duration-300">
                     <Check className="w-3 h-3 text-white" />
                   </div>
-                  <span className="text-gray-300 text-sm sm:text-base group-hover/item:text-white transition-colors duration-300">
+                  <span className="text-gray-100 text-sm sm:text-base group-hover/item:text-white transition-colors duration-300">
                     {item}
                   </span>
                 </div>
@@ -127,7 +127,7 @@ const ServiceDetailsPage = () => {
                 <h4 className="text-lg font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
                   {line.title}
                 </h4>
-                <p className="text-gray-300 text-sm leading-relaxed group-hover:text-gray-200 transition-colors">
+                <p className="text-gray-100 text-sm leading-relaxed group-hover:text-gray-200 transition-colors">
                   {line.description}
                 </p>
               </div>
@@ -167,7 +167,7 @@ const ServiceDetailsPage = () => {
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-gray-300 text-sm sm:text-base leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                    <p className="text-gray-100 text-sm sm:text-base leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
                       {step.description}
                     </p>
                   </div>

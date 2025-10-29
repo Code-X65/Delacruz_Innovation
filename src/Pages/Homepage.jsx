@@ -15,7 +15,7 @@ const Homepage = () => {
 
         <Hero />
         <Casestudy />
-        <TuneIn />
+        {/* <TuneIn /> */}
         <HelpOurClient />
         <Careers />
         <SocialImapact />

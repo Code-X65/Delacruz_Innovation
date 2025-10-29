@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Briefcase, Users, Rocket, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Careers = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -36,7 +37,7 @@ const Careers = () => {
             </h1>
 
             {/* Description */}
-            <p className="text-gray-400 text-lg leading-relaxed mb-8">
+            <p className="text-gray-100 text-lg leading-relaxed mb-8">
               We look for people who are energized by the same things as our clients: 
               <span className="text-white font-semibold"> bold thinking</span>, 
               <span className="text-white font-semibold"> real impact</span>, and the 
@@ -67,13 +68,13 @@ const Careers = () => {
             </div>
 
             {/* CTA Button */}
-         <button className="group relative px-8 py-4 bg-gradient-to-r from-purple-700 to-purple-600 text-white font-semibold rounded-full hover:shadow-2xl hover:shadow-purple-700/50 transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2">
+         <Link to='/jobs' className="group relative px-8 py-4 bg-gradient-to-r from-purple-700 to-purple-600 text-white font-semibold rounded-full hover:shadow-2xl hover:shadow-purple-700/50 transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2">
               <span className="relative z-10 flex items-center gap-2">
                 Explore Careers
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </button>
+            </Link>
 
             {/* Feature Pills */}
             <div className="flex flex-wrap gap-3 mt-8">

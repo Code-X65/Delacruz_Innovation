@@ -97,10 +97,10 @@ const services = [
 
               {/* Content Section */}
               <div className="p-8">
-                <h3 className="text-2xl font-bold text-purple-300 mb-4   group-hover:text-white transition-all duration-300">
+                <h3 className="text-2xl font-bold text-gray-50 mb-4   group-hover:text-white transition-all duration-300">
                   {service.title}
                 </h3>
-                <p className="text-gray-400 group-hover:text-gray-50  leading-relaxed mb-6">
+                <p className="text-gray-50 group-hover:text-gray-50  leading-relaxed mb-6">
                   {service.description}
                 </p>
 

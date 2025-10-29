@@ -44,7 +44,7 @@ const currentPage = location.pathname === '/' ? 'Home' : location.pathname.slice
           </div>
         </div>
       </div>
-      {/* Navigation path */}
+      {/* Navigation path
      <div className='p-8 text-gray-50 bg-gradient-to-br from-purple-700 via-purple-800 to-black font-semibold'>
       <p className='max-w-4xl mx-auto leading-relaxed'>
         <span className='text-purple-200'>Our clients are always pushing forward.</span> Testing. Challenging. <span className='text-white'>Striving for the change that changes everything.</span>
@@ -55,7 +55,7 @@ const currentPage = location.pathname === '/' ? 'Home' : location.pathname.slice
         <br />
         <span className='text-white font-bold'>Together we're accelerating toward a more sustainable, inclusive, and growing future for all.</span>
       </p>
-    </div>
+    </div> */}
 
     </div>
 

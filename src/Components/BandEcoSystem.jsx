@@ -1,125 +1,160 @@
-import React from 'react';
-import { Instagram, Youtube, Linkedin } from 'lucide-react';
-
+import React, { useState, useEffect } from 'react';
+import { Instagram, Youtube, Linkedin, Facebook } from 'lucide-react';
+import amala from '../assets/amala.png';
+import cca from '../assets/coreconnect.png';
+import innosphere from '../assets/innosphare.png';
 const BrandEcoSystem = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setIsVisible(true), 100);
+  }, []);
+
   const brands = [
     {
       name: "Amala On The Go",
-      logo: "🍲",
-      bgColor: "bg-gray-900",
+      logo: amala, // Replace with actual logo path
       socials: [
-        { icon: "Instagram", url: "#" },
-        { icon: "X", url: "#" }
-
+        { icon: Instagram, url: "https://instagram.com/amalaonthego", label: "Instagram" },
+        { icon: Facebook, url: "https://facebook.com/amalaonthego", label: "Facebook" }
       ]
     },
     {
       name: "Core Connect Academy",
-      logo: "CCA",
-      bgColor: "bg-white",
+      logo: cca, // Replace with actual logo path
       socials: [
-        { icon: "Facebook", url: "#" },
-        { icon: Youtube, url: "#" },
-        { icon: Instagram, url: "#" },
-        { icon: "X", url: "#" }
+        { icon: Facebook, url: "https://facebook.com/coreconnectacademy", label: "Facebook" },
+        { icon: Youtube, url: "https://youtube.com/coreconnectacademy", label: "Youtube" },
+        { icon: Instagram, url: "https://instagram.com/coreconnectacademy", label: "Instagram" },
+        { icon: Linkedin, url: "https://linkedin.com/company/coreconnectacademy", label: "LinkedIn" }
       ]
     },
     {
       name: "Innosphere Consulting",
-      logo: "IC",
-      bgColor: "bg-gray-900",
+      logo: innosphere, // Replace with actual logo path
       socials: [
-        { icon: Linkedin, url: "#" },
-        { icon: Youtube, url: "#" },
-        { icon: Instagram, url: "#" },
-        { icon: "X", url: "#" }
+        { icon: Linkedin, url: "https://linkedin.com/company/innosphere", label: "LinkedIn" },
+        { icon: Youtube, url: "https://youtube.com/innosphere", label: "Youtube" },
+        { icon: Instagram, url: "https://instagram.com/innosphere", label: "Instagram" },
+        { icon: Facebook, url: "https://facebook.com/innosphere", label: "Facebook" }
       ]
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-8">
-      <div className="max-w-6xl w-full">
-        {/* Header with info icon */}
-        <div className="text-center mb-16 relative">
-          <h2 className="text-4xl font-bold text-purple-700 inline-block">
-            Our Brand Ecosystem
+    <div className="relative bg-black py-20 md:py-32 px-4 overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-700 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-600 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/3 w-80 h-80 bg-purple-800 rounded-full filter blur-3xl animate-pulse delay-2000"></div>
+      </div>
+
+      {/* Grid Pattern Overlay */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Header */}
+        <div className={`text-center mb-16 md:mb-24 transition-all duration-1000 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+        }`}>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">Brand Ecosystem</span>
           </h2>
-          <div className="absolute top-0 right-0 w-10 h-10 bg-purple-700 rounded-full flex items-center justify-center text-white">
-            <span className="text-sm">ℹ</span>
-          </div>
+          <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto">
+            Discover our family of innovative brands delivering excellence across industries
+          </p>
         </div>
 
         {/* Brand Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {brands.map((brand, index) => (
-            <div key={index} className="flex flex-col items-center">
-              {/* Logo Circle */}
-              <div className={`w-48 h-48 ${brand.bgColor} rounded-full flex items-center justify-center mb-6 shadow-lg`}>
-                {brand.name === "Amala On The Go" && (
-                  <div className="text-center">
-                    <div className="text-6xl mb-2">{brand.logo}</div>
-                    <div className="text-orange-400 font-bold text-xl">Amala</div>
-                    <div className="text-orange-400 text-sm">On The Go</div>
+            <div
+              key={index}
+              className={`group transition-all duration-700 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
+              style={{ transitionDelay: `${index * 200}ms` }}
+            >
+              <div className="relative bg-gradient-to-br from-purple-950/50 to-black border border-purple-700/30 rounded-3xl p-8 hover:border-purple-600/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-700/20 hover:transform hover:scale-105 h-full flex flex-col">
+                
+                {/* Logo Container */}
+                <div className="flex items-center justify-center mb-8">
+                  <div className="w-48 h-48 bg-gradient-to-br from-purple-900/30 to-black/50 rounded-2xl flex items-center justify-center border border-purple-700/20 group-hover:border-purple-600/40 transition-all duration-300 overflow-hidden">
+                    <img 
+                      src={brand.logo} 
+                      alt={`${brand.name} logo`}
+                      className="w-40 h-40 object-contain group-hover:scale-110 transition-transform duration-500"
+                      onError={(e) => {
+                        // Fallback if image fails to load
+                        e.target.style.display = 'none';
+                        e.target.parentElement.innerHTML = `<div class="text-purple-400 text-4xl font-bold">${brand.name.split(' ').map(w => w[0]).join('')}</div>`;
+                      }}
+                    />
                   </div>
-                )}
-                {brand.name === "Core Connect Academy" && (
-                  <div className="text-center">
-                    <div className="text-purple-700 text-3xl font-bold mb-2">C</div>
-                    <div className="text-purple-700 text-sm font-semibold mb-1">CORE CONNECT</div>
-                    <div className="text-gray-600 text-xs tracking-wider">ACADEMY</div>
-                  </div>
-                )}
-                {brand.name === "Innosphere Consulting" && (
-                  <div className="text-center">
-                    <div className="text-purple-300 mb-2">
-                      <svg className="w-20 h-20 mx-auto" viewBox="0 0 100 100" fill="currentColor">
-                        <circle cx="50" cy="30" r="3" />
-                        <circle cx="50" cy="50" r="3" />
-                        <circle cx="50" cy="70" r="3" />
-                        <path d="M 30 50 Q 50 30 70 50 Q 50 70 30 50" fill="none" stroke="currentColor" strokeWidth="1.5" />
-                      </svg>
-                    </div>
-                    <div className="text-purple-300 text-xs tracking-wider">
-                      <div>INNOSPHERE</div>
-                      <div>CONSULTING</div>
-                      <div className="text-purple-400">LET US GO</div>
-                    </div>
-                  </div>
-                )}
-              </div>
+                </div>
 
-              {/* Brand Name */}
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">{brand.name}</h3>
+                {/* Brand Name */}
+                <h3 className="text-2xl font-bold text-white text-center mb-6 group-hover:text-purple-300 transition-colors">
+                  {brand.name}
+                </h3>
 
-              {/* Social Icons */}
-              <div className="flex gap-3">
-                {brand.socials.map((social, idx) => (
-                  <a
-                    key={idx}
-                    href={social.url}
-                    className="text-purple-700 hover:text-purple-800 transition-colors"
-                  >
-                    {social.icon === "X" ? (
-                      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                      </svg>
-                    ) : social.icon === "Facebook" ? (
-                      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                      </svg>
-                    ) : typeof social.icon === 'function' ? (
-                      <social.icon className="w-5 h-5" />
-                    ) : null}
-                  </a>
-                ))}
+                {/* Divider */}
+                <div className="h-px bg-gradient-to-r from-transparent via-purple-700 to-transparent mb-6 group-hover:via-purple-500 transition-colors"></div>
+
+                {/* Social Media Icons */}
+                <div className="flex items-center justify-center gap-4 mt-auto">
+                  {brand.socials.map((social, idx) => {
+                    const Icon = social.icon;
+                    return (
+                      <a
+                        key={idx}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 bg-gradient-to-br from-purple-900/50 to-black/50 border border-purple-700/30 rounded-xl flex items-center justify-center text-purple-400 hover:text-white hover:border-purple-500 hover:bg-gradient-to-br hover:from-purple-700 hover:to-purple-600 transition-all duration-300 hover:transform hover:scale-110 hover:shadow-lg hover:shadow-purple-600/50"
+                        aria-label={social.label}
+                      >
+                        <Icon className="w-5 h-5" />
+                      </a>
+                    );
+                  })}
+                </div>
+
+                {/* Decorative corner accent */}
+                <div className="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-purple-700/20 rounded-tr-2xl group-hover:border-purple-500/40 transition-colors"></div>
+                <div className="absolute bottom-4 left-4 w-12 h-12 border-b-2 border-l-2 border-purple-700/20 rounded-bl-2xl group-hover:border-purple-500/40 transition-colors"></div>
               </div>
             </div>
           ))}
         </div>
+
+        {/* Bottom decorative line */}
+        <div className={`mt-16 md:mt-24 transition-all duration-1000 delay-1000 ${
+          isVisible ? 'opacity-100' : 'opacity-0'
+        }`}>
+          <div className="h-1 bg-gradient-to-r from-transparent via-purple-700 to-transparent"></div>
+        </div>
       </div>
+
+      {/* Floating particles */}
+      <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-purple-600 rounded-full animate-ping opacity-75"></div>
+      <div className="absolute top-3/4 right-1/3 w-2 h-2 bg-purple-500 rounded-full animate-ping opacity-75 delay-500"></div>
+      <div className="absolute bottom-1/3 left-1/2 w-2 h-2 bg-purple-700 rounded-full animate-ping opacity-75 delay-1000"></div>
+
+      <style jsx>{`
+        .bg-grid-pattern {
+          background-image: linear-gradient(#ffffff08 1px, transparent 1px),
+            linear-gradient(90deg, #ffffff08 1px, transparent 1px);
+          background-size: 50px 50px;
+        }
+
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-1000 { animation-delay: 1s; }
+        .delay-2000 { animation-delay: 2s; }
+      `}</style>
     </div>
   );
 };
 
-export default BrandEcoSystem
+export default BrandEcoSystem;

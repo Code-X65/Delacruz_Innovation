@@ -45,7 +45,7 @@ const CTABanner = () => {
             </h1>
 
             {/* Description */}
-            <p className="text-gray-400 text-lg sm:text-xl leading-relaxed mb-10 max-w-3xl mx-auto">
+            <p className="text-gray-100 text-lg sm:text-xl leading-relaxed mb-10 max-w-3xl mx-auto">
               Partner with us to build competitive advantage through{' '}
               <span className="text-purple-400 font-semibold">strategy</span> and{' '}
               <span className="text-purple-400 font-semibold">technology</span>.
