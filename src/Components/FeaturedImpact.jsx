@@ -24,12 +24,12 @@ const FeaturedImpact = () => {
     ]
 
     return (
-        <div className="bg-white py-16">
+        <div className="bg-black py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h3 className="uppercase font-semibold text-sm text-blue-600 tracking-wide mb-3">
+                <h3 className="uppercase font-semibold text-sm text-purple-400 tracking-wide mb-3">
                     Featured Impact
                 </h3>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-12">
+                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-12">
                     Our Success Stories
                 </h2>
                 
@@ -37,7 +37,7 @@ const FeaturedImpact = () => {
                     {Impacts.map((impact, index) => (
                         <div 
                             key={index} 
-                            className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                            className="bg-purple-700 rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:shadow-purple-500/50 transition-all duration-300"
                         >
                             <img 
                                 src={impact.image} 
@@ -45,16 +45,16 @@ const FeaturedImpact = () => {
                                 className="w-full h-64 object-cover"
                             />
                             <div className="p-6">
-                                <span className="inline-block px-3 py-1 text-xs font-semibold text-blue-600 bg-blue-100 rounded-full mb-3">
+                                <span className="inline-block px-3 py-1 text-xs font-semibold text-purple-700 bg-purple-100 rounded-full mb-3">
                                     {impact.title}
                                 </span>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3 capitalize leading-tight">
+                                <h3 className="text-xl font-bold text-white mb-3 capitalize leading-tight">
                                     {impact.name}
                                 </h3>
-                                <p className="text-gray-600 leading-relaxed mb-4">
+                                <p className="text-gray-100 leading-relaxed mb-4">
                                     {impact.description.slice(0, 200)}...
                                 </p>
-                                <button className="text-blue-600 font-semibold hover:text-blue-700 transition-colors">
+                                <button className="text-purple-200 font-semibold hover:text-white transition-colors">
                                     Read More →
                                 </button>
                             </div>

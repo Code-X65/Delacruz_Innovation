@@ -1,24 +1,63 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Homepage from './Pages/Homepage'
+import React, { Suspense, lazy, useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
-import AboutPage from './Pages/AboutPage'
-import ServicesPage from './Pages/ServicesPage'
-import ServicesShowcase from './Pages/ServicesShowcase'
-import ServiceDetailsPage from './Pages/SericeDetailsPage'
-import CaseStudies from './Pages/CaseStudies'
-import OfficesSection from './Pages/OfficesSection'
-import InsightsListPage from './Pages/InsightsListPage'
-import NotFound from './Pages/NotFound'
-import InsightDetailPage from './Pages/InsightDetailPage'
-import JobListingsApp from './Pages/JobListingsApp'
 
-const App = () => {
+// Loading component
+const LoadingSpinner = () => (
+  <div style={{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    minHeight: '60vh',
+    width: '100%'
+  }}>
+    <div style={{
+      width: '50px',
+      height: '50px',
+      border: '4px solid #f3f3f3',
+      borderTop: '4px solid #3498db',
+      borderRadius: '50%',
+      animation: 'spin 1s linear infinite'
+    }} />
+    <style>{`
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    `}</style>
+  </div>
+)
+
+// Lazy load all page components for better performance
+const Homepage = lazy(() => import('./Pages/Homepage'))
+const AboutPage = lazy(() => import('./Pages/AboutPage'))
+const ServicesPage = lazy(() => import('./Pages/ServicesPage'))
+const ServiceDetailsPage = lazy(() => import('./Pages/SericeDetailsPage'))
+const CaseStudies = lazy(() => import('./Pages/CaseStudies'))
+const OfficesSection = lazy(() => import('./Pages/OfficesSection'))
+const InsightsListPage = lazy(() => import('./Pages/InsightsListPage'))
+const InsightDetailPage = lazy(() => import('./Pages/InsightDetailPage'))
+const JobListingsApp = lazy(() => import('./Pages/JobListingsApp'))
+const JobDetailsPage = lazy(() => import('./Pages/JobDetailsPage'))
+const NotFound = lazy(() => import('./Pages/NotFound'))
+
+// Scroll to top component
+const ScrollToTop = () => {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
+}
+
+const AppRoutes = () => {
   return (
-    <div>
-      <Router basename='/Delacruz_Innovation'>
-        <Navbar />
+    <>
+      <ScrollToTop />
+      <Suspense fallback={<LoadingSpinner />}>
         <Routes>
           <Route path='/' element={<Homepage />} />
           <Route path='/about' element={<AboutPage />} />
@@ -28,9 +67,21 @@ const App = () => {
           <Route path="/Offices" element={<OfficesSection />} />
           <Route path="/insights" element={<InsightsListPage />} />
           <Route path="/insights/:insightId" element={<InsightDetailPage />} />
-          <Route path="/careers" element={<JobListingsApp />} />
+          <Route path="/jobs" element={<JobListingsApp />} />
+          <Route path="/jobs/:jobId" element={<JobDetailsPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+      </Suspense>
+    </>
+  )
+}
+
+const App = () => {
+  return (
+    <div>
+      <Router basename='/Delacruz_Innovation'>
+        <Navbar />
+        <AppRoutes />
         <Footer />
       </Router>
     </div>

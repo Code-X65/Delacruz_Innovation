@@ -33,7 +33,7 @@ const ServiceDetailsPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black py-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-black py-28 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className={`mb-12 transition-all duration-1000 transform ${

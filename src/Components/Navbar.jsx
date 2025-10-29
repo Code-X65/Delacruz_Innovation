@@ -28,8 +28,7 @@ const services = [
   { name: 'Cyber Security Consultation', slug: 'cyber-security-consultation' },
   { name: 'Business Management Consulting', slug: 'business-management-consulting' },
   { name: 'Marketing, Branding & Advertising', slug: 'marketing-branding-advertising' },
-  { name: 'Software Innovation', slug: 'software-innovation' },
-  { name: 'Digital Marketing', slug: 'digital-marketing' }
+  { name: 'Software Innovation', slug: 'software-innovation' }
 ]
 
   return (
@@ -38,8 +37,8 @@ const services = [
         id="navbar"
        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
   isScrolled
-    ? 'bg-black/95 backdrop-blur-md shadow-lg py-2'
-    : 'bg-black/90 py-2 md:py-4'
+    ? 'bg-black backdrop-blur-md shadow-lg py-2'
+    : 'bg-black py-2 md:py-4'
 }`}s
       >
         {/* Animated bottom border */}
@@ -52,14 +51,14 @@ const services = [
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <h1
+         <Link to="/">   <h1
               className={`font-bold uppercase text-white transition-all duration-500 ${
                 isScrolled ? 'text-2xl md:text-3xl' : 'text-2xl md:text-3xl lg:text-4xl'
               }`}
             >
               <img src={Logo} alt="" className='w-24' />
            
-            </h1>
+            </h1> </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-8">
@@ -117,7 +116,7 @@ const services = [
     Case Studies
   </li>
 </Link>
-                <Link to='/careers'>
+                <Link to='/jobs'>
   <li className="hover:text-gray-200 cursor-pointer transition-all duration-300 hover:scale-105 list-none">
     Careers
   </li>
@@ -203,7 +202,7 @@ const services = [
   </div>
 </Link>
 
-<Link to='/careers' onClick={closeMobileMenu}>
+<Link to='/jobs' onClick={closeMobileMenu}>
   <div className="text-gray-400 hover:text-gray-200 cursor-pointer transition-all duration-300 py-2 border-b border-gray-700">
     Careers
   </div>

@@ -64,7 +64,7 @@ const Casestudy = () => {
 
   return (
     <>
-      <div className=' py-16 px-4 sm:px-6 lg:px-8'>
+      <div className='bg-black py-16 px-4 sm:px-6 lg:px-8'>
         {/* Desktop: Large Case Study Card */}
         <div 
           ref={caseStudyRef}

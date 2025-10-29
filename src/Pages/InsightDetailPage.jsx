@@ -52,7 +52,7 @@ const InsightDetailPage = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
-      <div className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="relative py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-700/20 to-black"></div>
         <div className="absolute top-20 right-20 w-96 h-96 bg-purple-700/20 rounded-full blur-3xl animate-pulse"></div>

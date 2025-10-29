@@ -28,7 +28,7 @@ const InsightsListPage = () => {
   const regularInsights = insightsData.insights.filter(insight => !insight.featured);
 
   return (
-    <div className="min-h-screen bg-white py-24 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white py-28 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className={`mb-12 transition-all duration-1000 transform ${

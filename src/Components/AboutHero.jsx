@@ -18,7 +18,7 @@ const currentPage = location.pathname === '/' ? 'Home' : location.pathname.slice
     <>
     <div>
 
-      <div id="hero" className="relative h-[400px] md:h-[500px] flex items-end justify-start overflow-hidden " style={{ backgroundImage: `url(${BackgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div id="hero" className="relative h-[400px] md:h-[800px] flex items-end justify-start overflow-hidden  " style={{ backgroundImage: `url(${BackgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -45,15 +45,18 @@ const currentPage = location.pathname === '/' ? 'Home' : location.pathname.slice
         </div>
       </div>
       {/* Navigation path */}
-     <div className='p-8 text-gray-50 bg-purple-700 font-semibold '>
-  <p>Our clients are always pushing forward. Testing. Challenging. Striving for the change that changes everything.
-<br />
-<br />
-We partner with bold leaders every step of the way. Pinpointing the strategy that will reshape tomorrow. Harnessing innovation to reach net zero. Transforming through technology. Developing skills and capabilities across their organization.
-<br />
-<br />
-Together we’re accelerating toward a more sustainable, inclusive, and growing future for all.</p>
-</div>
+     <div className='p-8 text-gray-50 bg-gradient-to-br from-purple-700 via-purple-800 to-black font-semibold'>
+      <p className='max-w-4xl mx-auto leading-relaxed'>
+        <span className='text-purple-200'>Our clients are always pushing forward.</span> Testing. Challenging. <span className='text-white'>Striving for the change that changes everything.</span>
+        <br />
+        <br />
+        We partner with <span className='text-purple-300 font-bold'>bold leaders</span> every step of the way. Pinpointing the strategy that will reshape tomorrow. Harnessing innovation to reach net zero. <span className='text-white'>Transforming through technology.</span> Developing skills and capabilities across their organization.
+        <br />
+        <br />
+        <span className='text-white font-bold'>Together we're accelerating toward a more sustainable, inclusive, and growing future for all.</span>
+      </p>
+    </div>
+
     </div>
 
       <style jsx>{`

@@ -296,6 +296,204 @@
           }
         ]
       }
+    },
+    {
+      "id": "marketing",
+      "slug": "marketing-branding-advertising",
+      "title": "Marketing, Branding & Advertising",
+      "subtitle": "Creative Solutions & Brand Strategy",
+      "breadcrumb": "Services | Marketing & Branding",
+      "gradient": "from-pink-600 to-rose-400",
+      "delay": "400ms",
+      "shortDescription": "Build powerful brands and drive customer engagement through integrated marketing strategies and creative campaigns.",
+      "tagline": "Build powerful brands and drive customer engagement through integrated marketing strategies and creative campaigns.",
+      "description": "Effective marketing goes beyond creative campaigns. It requires deep understanding of consumer behavior, market trends, and brand positioning to create meaningful connections. Our approach combines data-driven insights with creative excellence to develop marketing solutions that drive business growth and build lasting brand equity.",
+      "licenses": "Marketing Consulting, Brand Strategy, Digital Marketing, Advertising Services",
+      "features": [
+        "Brand strategy & positioning",
+        "Digital marketing campaigns",
+        "Content creation & management",
+        "Social media marketing",
+        "Performance analytics",
+        "Creative design services"
+      ],
+      "deliverables": [
+        "Brand strategy framework",
+        "Marketing campaign plans",
+        "Content marketing strategy",
+        "Social media roadmap",
+        "Performance dashboards",
+        "Creative assets & guidelines"
+      ],
+      "serviceLines": [
+        {
+          "title": "Brand Strategy & Identity",
+          "description": "Develop distinctive brand identities that resonate with target audiences. We create comprehensive brand strategies including positioning, messaging, visual identity, and brand guidelines."
+        },
+        {
+          "title": "Digital Marketing & SEO",
+          "description": "Drive online visibility and customer acquisition through data-driven digital marketing. Our services include SEO, SEM, email marketing, and conversion optimization strategies."
+        },
+        {
+          "title": "Content Marketing & Creation",
+          "description": "Engage audiences with compelling content across all channels. We create blogs, videos, infographics, and thought leadership content that educates, entertains, and converts."
+        },
+        {
+          "title": "Social Media Management",
+          "description": "Build and nurture online communities through strategic social media management. We handle content creation, community engagement, and social advertising campaigns."
+        },
+        {
+          "title": "Advertising Campaigns",
+          "description": "Launch integrated advertising campaigns across digital and traditional channels. From concept to execution, we create campaigns that capture attention and drive action."
+        },
+        {
+          "title": "Marketing Analytics & Insights",
+          "description": "Measure and optimize marketing performance with advanced analytics. We provide actionable insights that help you understand customer behavior and improve ROI."
+        }
+      ],
+      "process": [
+        {
+          "number": "01",
+          "title": "Brand Discovery & Research",
+          "description": "Comprehensive market research, competitor analysis, and audience insights to understand your brand's unique position and opportunities in the market."
+        },
+        {
+          "number": "02",
+          "title": "Strategy Development",
+          "description": "Creation of integrated marketing strategies, brand positioning frameworks, and campaign concepts aligned with business objectives and target audience preferences."
+        },
+        {
+          "number": "03",
+          "title": "Creative Execution",
+          "description": "Development of creative assets, content production, and campaign implementation across digital and traditional channels with consistent brand messaging."
+        },
+        {
+          "number": "04",
+          "title": "Performance & Optimization",
+          "description": "Continuous monitoring of campaign performance, A/B testing, and optimization to maximize engagement, conversions, and return on marketing investment."
+        }
+      ],
+      "marketOpportunity": {
+        "region": "Regional & Global Focus",
+        "summary": "The marketing landscape is evolving rapidly with digital transformation and changing consumer behaviors. Businesses need integrated strategies that combine traditional and digital channels:",
+        "highlights": [
+          {
+            "title": "Digital-First Strategies",
+            "description": "Leverage digital channels and data analytics to create personalized customer experiences and measurable results"
+          },
+          {
+            "title": "Influencer Marketing",
+            "description": "Partner with relevant influencers and brand ambassadors to amplify reach and build authentic connections"
+          },
+          {
+            "title": "Video Content Dominance",
+            "description": "Capitalize on the growing consumption of video content across social media and streaming platforms"
+          },
+          {
+            "title": "Brand Purpose & Authenticity",
+            "description": "Build brands that stand for something meaningful and connect with consumers on emotional and values-based levels"
+          }
+        ]
+      }
+    },
+    {
+      "id": "software",
+      "slug": "software-innovation",
+      "title": "Software Innovation",
+      "subtitle": "Cutting-Edge Software Solutions",
+      "breadcrumb": "Services | Software Innovation",
+      "gradient": "from-indigo-600 to-blue-400",
+      "delay": "500ms",
+      "shortDescription": "Transform ideas into powerful software products through innovative development, emerging technologies, and user-centric design.",
+      "tagline": "Transform ideas into powerful software products through innovative development, emerging technologies, and user-centric design.",
+      "description": "Software innovation requires more than technical expertise. It demands a deep understanding of user needs, emerging technologies, and market dynamics to create solutions that truly make a difference. Our approach combines agile methodologies with cutting-edge technologies to deliver software products that drive business value and user satisfaction.",
+      "licenses": "Software Development, Product Innovation, Technology Research, AI/ML Solutions",
+      "features": [
+        "AI & machine learning integration",
+        "Mobile app development",
+        "Progressive web applications",
+        "API development & integration",
+        "DevOps & automation",
+        "UX/UI design excellence"
+      ],
+      "deliverables": [
+        "Product roadmap & strategy",
+        "Technical architecture design",
+        "MVP development",
+        "Full-stack applications",
+        "API documentation",
+        "Testing & quality assurance"
+      ],
+      "serviceLines": [
+        {
+          "title": "AI & Machine Learning Solutions",
+          "description": "Harness the power of artificial intelligence and machine learning to automate processes, gain insights, and create intelligent applications that learn and improve over time."
+        },
+        {
+          "title": "Mobile Application Development",
+          "description": "Build native and cross-platform mobile applications for iOS and Android. We create intuitive, performant apps that deliver exceptional user experiences."
+        },
+        {
+          "title": "Product Innovation & Prototyping",
+          "description": "Transform innovative ideas into viable products through rapid prototyping, MVP development, and iterative design processes that validate market fit."
+        },
+        {
+          "title": "Cloud-Native Development",
+          "description": "Design and build scalable, resilient applications optimized for cloud environments. Leverage microservices, containers, and serverless architectures."
+        },
+        {
+          "title": "IoT & Connected Devices",
+          "description": "Develop Internet of Things solutions that connect physical devices with digital platforms, enabling real-time monitoring, analytics, and automation."
+        },
+        {
+          "title": "Blockchain & Web3",
+          "description": "Explore decentralized technologies with blockchain development, smart contracts, and Web3 applications that create new business models and opportunities."
+        }
+      ],
+      "process": [
+        {
+          "number": "01",
+          "title": "Discovery & Ideation",
+          "description": "Collaborative workshops to understand your vision, define product requirements, explore technical possibilities, and validate concepts through user research and market analysis."
+        },
+        {
+          "number": "02",
+          "title": "Design & Architecture",
+          "description": "Creation of user experience designs, technical architecture, and development roadmap. We prototype key features to validate design decisions early."
+        },
+        {
+          "number": "03",
+          "title": "Agile Development",
+          "description": "Iterative development in sprints with continuous integration and delivery. Regular demos and feedback loops ensure alignment with your vision and user needs."
+        },
+        {
+          "number": "04",
+          "title": "Launch & Evolution",
+          "description": "Product deployment, user onboarding, performance monitoring, and continuous improvement based on user feedback and analytics insights."
+        }
+      ],
+      "marketOpportunity": {
+        "region": "Global Innovation Focus",
+        "summary": "Software innovation is driving transformation across every industry. Organizations need partners who can help them leverage emerging technologies and stay ahead of the curve:",
+        "highlights": [
+          {
+            "title": "AI-Powered Automation",
+            "description": "Integrate artificial intelligence to automate complex tasks, enhance decision-making, and create new value propositions"
+          },
+          {
+            "title": "Low-Code/No-Code Platforms",
+            "description": "Accelerate development and empower citizen developers with modern low-code platforms and visual development tools"
+          },
+          {
+            "title": "Edge Computing",
+            "description": "Process data closer to the source with edge computing solutions that reduce latency and enable real-time applications"
+          },
+          {
+            "title": "Sustainable Technology",
+            "description": "Develop energy-efficient, environmentally conscious software solutions that support corporate sustainability goals"
+          }
+        ]
+      }
     }
   ]
 }

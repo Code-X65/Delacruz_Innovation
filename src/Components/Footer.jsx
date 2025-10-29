@@ -57,7 +57,7 @@ const Footer = () => {
             </div>
 
             {/* Newsletter Column */}
-            <div className='hidden md:block'>
+            <div className='block'>
               <h4 className="font-semibold mb-4 text-white">Stay Informed</h4>
               <p className="text-gray-400 text-sm mb-4">
                 Subscribe for insights on digital transformation
@@ -66,9 +66,9 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Email Address"
-                  className="flex-1 bg-transparent border border-gray-700 rounded-md px-4 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#4a90b8]"
+                  className="flex-1 bg-transparent border border-gray-700 rounded-md px-4 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-purple-500"
                 />
-                <button className="bg-[#4a90b8] hover:bg-[#6bb3d8] text-white px-6 py-2 rounded-md text-sm font-semibold transition-colors duration-300">
+                <button className="bg-purple-700 hover:bg-purple-500 text-white px-6 py-2 rounded-md text-sm font-semibold transition-colors duration-300">
                   Subscribe
                 </button>
               </div>

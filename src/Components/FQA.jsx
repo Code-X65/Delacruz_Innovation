@@ -35,19 +35,19 @@ const FAQ = () => {
     }
 
     return (
-        <div className="bg-gray-50 py-20">
+        <div className="bg-black py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-start justify-between mb-12">
                     <div className="flex-1">
-                        <h2 className="text-4xl lg:text-5xl font-bold text-purple-700 mb-3">
+                        <h2 className="text-4xl lg:text-5xl font-bold text-purple-400 mb-3">
                             Frequently Asked Questions
                         </h2>
-                        <p className="text-lg text-gray-600">
+                        <p className="text-lg text-gray-300">
                             Find answers to common questions about our products and services.
                         </p>
                     </div>
                     <div className="ml-6 flex-shrink-0">
-                        <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center shadow-lg">
+                        <div className="w-16 h-16 bg-purple-700 rounded-full flex items-center justify-center shadow-lg shadow-purple-500/50">
                             <svg 
                                 className="w-8 h-8 text-white" 
                                 fill="none" 
@@ -69,19 +69,19 @@ const FAQ = () => {
                     {faqs.map((faq, index) => (
                         <div 
                             key={index}
-                            className={`bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:shadow-xl ${
-                                openIndex === index ? 'scale-[1.01]' : ''
+                            className={`bg-transparent border border-purple-700/30 rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/20 hover:border-purple-500/50 ${
+                                openIndex === index ? 'scale-[1.01] border-purple-500' : ''
                             }`}
                         >
                             <button
                                 onClick={() => toggleAccordion(index)}
-                                className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-purple-50 transition-all duration-200"
+                                className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-purple-700/10 transition-all duration-200"
                             >
-                                <span className="text-lg font-semibold text-gray-900">
+                                <span className="text-lg font-semibold text-white">
                                     {faq.question}
                                 </span>
                                 <svg
-                                    className={`w-6 h-6 text-purple-600 transform transition-all duration-500 flex-shrink-0 ml-6 ${
+                                    className={`w-6 h-6 text-purple-400 transform transition-all duration-500 flex-shrink-0 ml-6 ${
                                         openIndex === index ? 'rotate-180 scale-110' : ''
                                     }`}
                                     fill="none"
@@ -101,8 +101,8 @@ const FAQ = () => {
                                 className={`overflow-hidden transition-all duration-500 ease-in-out ${
                                     openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                                 }`}
-  N                          >
-                                <div className="px-8 pb-6 text-gray-600 text-base leading-relaxed animate-fadeIn">
+                            >
+                                <div className="px-8 pb-6 text-gray-300 text-base leading-relaxed">
                                     {faq.answer}
                                 </div>
                             </div>

@@ -137,7 +137,7 @@ const CaseStudies = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black py-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-black py-28 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 opacity-0 animate-fadeIn" style={{ animation: 'fadeIn 0.8s ease-out forwards' }}>
@@ -241,7 +241,7 @@ const CaseStudies = () => {
         <div className='flex flex-col items-center justify-center text-white py-16 my-10 border border-purple-700 rounded-lg '>
             <h1 className='text-4xl font-bold mb-4'>Want Results Like These?</h1>
             <p className='text-gray-300'>Let's discuss how we can help your business achieve similar transformational outcomes.</p>
-            <button className='text-semi-bold px-8 py-3 hover:scale-0 rounded-md border border-purple-600 my-6 hover:shadow-md hover:shadow-purple-500 hover:bg-purple-700 hover:text-white transition-all duration-500 cursor-pointer'>Get in Touch</button>
+            <button className='text-semi-bold px-8 py-3 hover:scale-120 rounded-md border border-purple-600 my-6 hover:shadow-md hover:shadow-purple-500 hover:bg-purple-700 hover:text-white transition-all duration-500 cursor-pointer'>Get in Touch</button>
         </div>
       </div>
 
