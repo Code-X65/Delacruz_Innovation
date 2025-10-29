@@ -62,18 +62,18 @@ const AppRoutes = () => {
       <ScrollToTop />
       <Suspense fallback={<LoadingSpinner />}>
         <Routes>
-          <Route path='/' element={<Homepage />} />
-          <Route path='/about' element={<AboutPage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/services/:serviceId" element={<ServiceDetailsPage />} />
-          <Route path="/case-studies" element={<CaseStudies />} />
-          <Route path="/Offices" element={<OfficesSection />} />
-          <Route path="/insights" element={<InsightsListPage />} />
-          <Route path="/insights/:insightId" element={<InsightDetailPage />} />
-          <Route path="/jobs" element={<JobPortalApp />} />
-          <Route path="/jobs/:jobId" element={<JobDetailsPage />} />
-          <Route path="/jobs/apply" element={<ApplicationForm />} />
-          <Route path="/application" element={<PersonalInformation />} />
+          <Route index element={<Homepage />} />
+          <Route path='about' element={<AboutPage />} />
+          <Route path="services" element={<ServicesPage />} />
+          <Route path="services/:serviceId" element={<ServiceDetailsPage />} />
+          <Route path="case-studies" element={<CaseStudies />} />
+          <Route path="offices" element={<OfficesSection />} />
+          <Route path="insights" element={<InsightsListPage />} />
+          <Route path="insights/:insightId" element={<InsightDetailPage />} />
+          <Route path="jobs" element={<JobPortalApp />} />
+          <Route path="jobs/:jobId" element={<JobDetailsPage />} />
+          <Route path="jobs/apply" element={<ApplicationForm />} />
+          <Route path="application" element={<PersonalInformation />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

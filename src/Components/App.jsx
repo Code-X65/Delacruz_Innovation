@@ -29,8 +29,8 @@ const App = () => {
       <main style={{ minHeight: '80vh' }}>
         <Routes>
           <Route index element={<Homepage />} />
-          <Route path="/about" element={<AboutPage />} />
-           <Route path="/services/:serviceName" element={<ServicePage />} />
+          <Route path="about" element={<AboutPage />} />
+           <Route path="services/:serviceName" element={<ServicePage />} />
           {/* <Route path='/Services_Showcase' element={<ServicesShowcase />}/>
           <Route path='/Explore_Solutions' element={<ExploreSolutions />}/> */}
           <Route path="*" element={<NotFound />} />
