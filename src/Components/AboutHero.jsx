@@ -1,107 +1,111 @@
 import React, { useEffect, useState } from 'react';
-import BackgroundImage from '../assets/Images/bghero.png'
-import { ArrowRight, ChevronRight, ChevronRightIcon } from 'lucide-react';
-import { useLocation, useNavigate } from 'react-router-dom'
+import { ArrowRight, Users, Target, Award } from 'lucide-react';
 
 const AboutHero = () => {
-    const location = useLocation();
-const navigate = useNavigate();
-
-const currentPage = location.pathname === '/' ? 'Home' : location.pathname.slice(1).replace('-', ' ').split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-      const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Trigger animation on mount
     setTimeout(() => setIsVisible(true), 100);
   }, []);
-  return (
-    <>
-    <div>
 
-      <div id="hero" className="relative h-[400px] md:h-[800px] flex items-end justify-start overflow-hidden  " style={{ backgroundImage: `url(${BackgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+  return (
+    <div className="bg-black py-18">
+      {/* Hero Section */}
+      <div className="relative min-h-[600px] md:min-h-[700px] flex items-center overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&auto=format&fit=crop" 
+            alt="Collaborative team"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/60"></div>
         </div>
 
-        {/* Grid Pattern Overlay */}
-        <div className=" inset-0 bg-grid-pattern opacity-5 max-w-7xl "></div>
-
-        <div className="  px-4  pb-4 relative z-10">
-          <div className="hero-container ">
-            <h6 className='text-gray-50 font-medium'>About us</h6>
-            {/* Main Heading with Animation */}
-            <h2
-              className={`text-2xl md:text-4xl lg:text-5xl font-semibold text-white mb-6 md:mb-8 max-w-3xl leading-tight transition-all duration-1000 ${
-                isVisible
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 -translate-y-10'
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="max-w-3xl">
+            {/* Badge */}
+            <div 
+              className={`inline-flex items-center gap-2 px-4 py-2 bg-purple-700/20 border border-purple-700/30 rounded-full mb-6 transition-all duration-1000 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
               }`}
             >
-              We accelerate sustainable and inclusive growth
-            </h2>
+              <Users className="w-4 h-4 text-purple-300" />
+              <span className="text-purple-300 text-sm font-semibold tracking-wide uppercase">
+                About Us
+              </span>
+            </div>
+
+            {/* Main Heading */}
+            <h1
+              className={`text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight transition-all duration-1000 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+              }`}
+              style={{ transitionDelay: '200ms' }}
+            >
+              Transforming businesses through{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">
+                innovation and expertise
+              </span>
+            </h1>
+
+            {/* Description */}
+            <p
+              className={`text-gray-300 text-lg md:text-xl leading-relaxed mb-8 transition-all duration-1000 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+              }`}
+              style={{ transitionDelay: '400ms' }}
+            >
+              We partner with bold leaders to accelerate sustainable and inclusive growth. From strategy to execution, we deliver solutions that drive real impact.
+            </p>
+
+            {/* Stats */}
+            <div
+              className={`grid grid-cols-3 gap-6 mb-8 transition-all duration-1000 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+              }`}
+              style={{ transitionDelay: '600ms' }}
+            >
+              <div className="text-center md:text-left">
+                <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-1">15+</div>
+                <div className="text-gray-400 text-sm">Years Experience</div>
+              </div>
+              <div className="text-center md:text-left">
+                <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-1">500+</div>
+                <div className="text-gray-400 text-sm">Projects Delivered</div>
+              </div>
+              <div className="text-center md:text-left">
+                <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-1">50+</div>
+                <div className="text-gray-400 text-sm">Countries</div>
+              </div>
+            </div>
+
+            {/* CTA Button */}
+            <div
+              className={`transition-all duration-1000 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+              }`}
+              style={{ transitionDelay: '800ms' }}
+            >
+              <a 
+                href="#learn-more" 
+                className="inline-flex items-center gap-2 px-8 py-4 bg-purple-700 hover:bg-purple-600 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
+              >
+                Learn More About Us
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
+
+        {/* Decorative Elements */}
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-700/10 rounded-full blur-3xl"></div>
       </div>
-      {/* Navigation path
-     <div className='p-8 text-gray-50 bg-gradient-to-br from-purple-700 via-purple-800 to-black font-semibold'>
-      <p className='max-w-4xl mx-auto leading-relaxed'>
-        <span className='text-purple-200'>Our clients are always pushing forward.</span> Testing. Challenging. <span className='text-white'>Striving for the change that changes everything.</span>
-        <br />
-        <br />
-        We partner with <span className='text-purple-300 font-bold'>bold leaders</span> every step of the way. Pinpointing the strategy that will reshape tomorrow. Harnessing innovation to reach net zero. <span className='text-white'>Transforming through technology.</span> Developing skills and capabilities across their organization.
-        <br />
-        <br />
-        <span className='text-white font-bold'>Together we're accelerating toward a more sustainable, inclusive, and growing future for all.</span>
-      </p>
-    </div> */}
 
+  
     </div>
+  );
+};
 
-      <style jsx>{`
-        .bg-grid-pattern {
-          background-image: linear-gradient(#ffffff08 1px, transparent 1px),
-            linear-gradient(90deg, #ffffff08 1px, transparent 1px);
-          background-size: 50px 50px;
-        }
-
-        @keyframes gradient {
-          0%, 100% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-        }
-
-        .animate-gradient {
-          background-size: 200% auto;
-          animation: gradient 3s ease infinite;
-        }
-
-        @keyframes scroll {
-          0% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(8px);
-          }
-          100% {
-            transform: translateY(0);
-          }
-        }
-
-        .animate-scroll {
-          animation: scroll 1.5s ease-in-out infinite;
-        }
-
-        .delay-1000 {
-          animation-delay: 1s;
-        }
-      `}</style>
-    </>
-  )
-}
-
-export default AboutHero
+export default AboutHero;

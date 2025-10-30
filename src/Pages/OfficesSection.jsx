@@ -45,22 +45,7 @@ const OfficesSection = () => {
         }
       }
     },
-    europe: {
-      title: "Europe Affiliates",
-      countries: {
-        uk: {
-          name: "United Kingdom",
-          cities: [
-            {
-              name: "London",
-              address: "London, United Kingdom",
-              city: "",
-              phone: ""
-            }
-          ]
-        }
-      }
-    },
+
     middleEast: {
       title: "Middle East Affiliates",
       countries: {
@@ -204,7 +189,7 @@ const OfficesSection = () => {
               </div>
             </div>
 
-            {/* Europe Affiliates */}
+            {/* Europe Affiliates
             <div className="bg-gray-900/50 backdrop-blur-sm border border-purple-700/30 rounded-lg overflow-hidden transition-all duration-300 hover:border-purple-700/60">
               <button
                 onClick={() => toggleRegion('europe')}
@@ -253,7 +238,7 @@ const OfficesSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Middle East Affiliates */}
             <div className="bg-gray-900/50 backdrop-blur-sm border border-purple-700/30 rounded-lg overflow-hidden transition-all duration-300 hover:border-purple-700/60">

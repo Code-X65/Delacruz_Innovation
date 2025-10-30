@@ -18,8 +18,8 @@ const AboutPage = () => {
     <MissionVisionValues />
     {/* <AboutFeatures /> */}
     <BrandEcoSyst />
-    <FeaturedImpact />
-    <FAQ />
+    {/* <FeaturedImpact /> */}
+    
     </div>
     </>
   )

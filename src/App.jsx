@@ -4,7 +4,11 @@ import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
 import PersonalInformation from './Components/PersonalInformation'
 import JobPortalApp from './Pages/JobPortalApp'
-
+import ContactPage from './Pages/ContactPage'
+import { jobsData } from './Components/jobsData'
+import JobListingsPage from './Pages/JobListingsPage'
+import JobDetailsPage from './Pages/JobDetailsPage'
+import ApplicationPage from './Pages/ApplicationPage'
 // Loading component
 const LoadingSpinner = () => (
   <div style={{
@@ -40,8 +44,8 @@ const CaseStudies = lazy(() => import('./Pages/CaseStudies'))
 const OfficesSection = lazy(() => import('./Pages/OfficesSection'))
 const InsightsListPage = lazy(() => import('./Pages/InsightsListPage'))
 const InsightDetailPage = lazy(() => import('./Pages/InsightDetailPage'))
-const JobListingsApp = lazy(() => import('./Pages/JobListingsApp'))
-const JobDetailsPage = lazy(() => import('./Pages/JobDetailsPage'))
+
+
 const NotFound = lazy(() => import('./Pages/NotFound'))
 const ApplicationForm = lazy(() => import('./Components/ApplicationForm'))
 
@@ -70,10 +74,14 @@ const AppRoutes = () => {
           <Route path="offices" element={<OfficesSection />} />
           <Route path="insights" element={<InsightsListPage />} />
           <Route path="insights/:insightId" element={<InsightDetailPage />} />
-          <Route path="jobs" element={<JobPortalApp />} />
-          <Route path="jobs/:jobId" element={<JobDetailsPage />} />
+          {/* <Route path="jobs" element={<JobPortalApp />} />
+         
           <Route path="jobs/apply" element={<ApplicationForm />} />
-          <Route path="application" element={<PersonalInformation />} />
+          <Route path="application" element={<PersonalInformation />} /> */}
+           <Route path="/jobs" element={<JobListingsPage jobsData={jobsData} />} />
+          <Route path="/job/:jobId" element={<JobDetailsPage jobsData={jobsData} />} />
+          <Route path="/job/:jobId/apply" element={<ApplicationPage jobsData={jobsData} />} />
+          <Route path='contact' element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

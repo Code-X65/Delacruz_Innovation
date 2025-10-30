@@ -18,7 +18,7 @@ const Homepage = () => {
         {/* <TuneIn /> */}
         <HelpOurClient />
         <Careers />
-        <SocialImapact />
+        {/* <SocialImapact /> */}
         <CTABanner />
     </div>
     </>

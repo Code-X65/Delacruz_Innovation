@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const CTABanner = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -52,7 +53,7 @@ const CTABanner = () => {
             </p>
 
             {/* CTA Button */}
-            <div className={`transition-all duration-1000 transform ${
+            <Link to='/contact' className={`transition-all duration-1000 transform ${
               isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`} style={{ transitionDelay: '300ms' }}>
               <button className="group relative px-10 py-5 bg-gradient-to-r from-purple-700 to-purple-600 text-white text-lg font-semibold rounded-full hover:shadow-2xl hover:shadow-purple-700/50 transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-3">
@@ -66,7 +67,7 @@ const CTABanner = () => {
                 {/* Glow Effect */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-700 to-purple-600 opacity-0 blur-xl group-hover:opacity-50 transition-opacity duration-300"></div>
               </button>
-            </div>
+            </Link>
 
             {/* Trust Indicators */}
             <div className={`flex flex-wrap justify-center items-center gap-6 mt-12 transition-all duration-1000 transform ${

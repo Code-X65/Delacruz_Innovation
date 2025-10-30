@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Instagram, Youtube, Linkedin, Facebook } from 'lucide-react';
+import { Instagram, Youtube, Linkedin, Facebook, ChevronLeft, ChevronRight } from 'lucide-react'
 import amala from '../assets/amala.png';
-import cca from '../assets/coreconnect.png';
-import innosphere from '../assets/innosphare.png';
+import coreconnect from '../assets/coreconnect.png'
+import innosphere from '../assets/innospere.png'
+
 const BrandEcoSystem = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [flippedCards, setFlippedCards] = useState({});
 
   useEffect(() => {
     setTimeout(() => setIsVisible(true), 100);
@@ -12,146 +15,247 @@ const BrandEcoSystem = () => {
 
   const brands = [
     {
-      name: "Amala On The Go",
-      logo: amala, // Replace with actual logo path
+      logo: amala,
+      description: "Leading innovation in food delivery services across Africa",
       socials: [
-        { icon: Instagram, url: "https://instagram.com/amalaonthego", label: "Instagram" },
-        { icon: Facebook, url: "https://facebook.com/amalaonthego", label: "Facebook" }
+        { icon: Instagram, url: "https://instagram.com", label: "Instagram" },
+        { icon: Facebook, url: "https://facebook.com", label: "Facebook" }
       ]
     },
     {
-      name: "Core Connect Academy",
-      logo: cca, // Replace with actual logo path
+      logo: coreconnect,
+      description: "Empowering the next generation with cutting-edge tech education",
       socials: [
-        { icon: Facebook, url: "https://facebook.com/coreconnectacademy", label: "Facebook" },
-        { icon: Youtube, url: "https://youtube.com/coreconnectacademy", label: "Youtube" },
-        { icon: Instagram, url: "https://instagram.com/coreconnectacademy", label: "Instagram" },
-        { icon: Linkedin, url: "https://linkedin.com/company/coreconnectacademy", label: "LinkedIn" }
+        { icon: Facebook, url: "https://facebook.com", label: "Facebook" },
+        { icon: Youtube, url: "https://youtube.com", label: "Youtube" },
+        { icon: Instagram, url: "https://instagram.com", label: "Instagram" },
+        { icon: Linkedin, url: "https://linkedin.com", label: "LinkedIn" }
       ]
     },
     {
-      name: "Innosphere Consulting",
-      logo: innosphere, // Replace with actual logo path
+      logo: innosphere,
+      description: "Strategic consulting for digital transformation and business growth",
       socials: [
-        { icon: Linkedin, url: "https://linkedin.com/company/innosphere", label: "LinkedIn" },
-        { icon: Youtube, url: "https://youtube.com/innosphere", label: "Youtube" },
-        { icon: Instagram, url: "https://instagram.com/innosphere", label: "Instagram" },
-        { icon: Facebook, url: "https://facebook.com/innosphere", label: "Facebook" }
+        { icon: Linkedin, url: "https://linkedin.com", label: "LinkedIn" },
+        { icon: Youtube, url: "https://youtube.com", label: "Youtube" },
+        { icon: Instagram, url: "https://instagram.com", label: "Instagram" },
+        { icon: Facebook, url: "https://facebook.com", label: "Facebook" }
       ]
     }
   ];
 
-  return (
-    <div className="relative bg-black py-20 md:py-32 px-4 overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-700 rounded-full filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-600 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/3 w-80 h-80 bg-purple-800 rounded-full filter blur-3xl animate-pulse delay-2000"></div>
-      </div>
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % brands.length);
+  };
 
-      {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + brands.length) % brands.length);
+  };
+
+  const toggleFlip = (index) => {
+    setFlippedCards(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
+  return (
+    <div className="relative bg-black py-16 px-4 overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-700 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-600 rounded-full filter blur-3xl"></div>
+      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className={`text-center mb-16 md:mb-24 transition-all duration-1000 ${
+        <div className={`text-center mb-12 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
         }`}>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">Brand Ecosystem</span>
           </h2>
-          <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto">
+          <p className="text-gray-400 text-lg max-w-3xl mx-auto">
             Discover our family of innovative brands delivering excellence across industries
           </p>
         </div>
 
-        {/* Brand Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+        {/* Mobile Swiper */}
+        <div className="md:hidden">
+          <div className="relative">
+            {brands.map((brand, index) => (
+              <div
+                key={index}
+                className={`transition-all duration-500 ${
+                  index === currentSlide
+                    ? 'opacity-100 scale-100 relative z-10'
+                    : 'opacity-0 scale-95 absolute top-0 left-0 w-full pointer-events-none'
+                }`}
+              >
+                <div 
+                  className="perspective-1000"
+                  onClick={() => toggleFlip(`mobile-${index}`)}
+                >
+                  <div className={`relative transition-all duration-700 transform-style-3d ${flippedCards[`mobile-${index}`] ? 'rotate-y-180' : ''}`}
+                       style={{ transformStyle: 'preserve-3d' }}>
+                    
+                    {/* Front */}
+                    <div className="backface-hidden bg-gradient-to-br from-purple-950/50 to-black border border-purple-700/30 rounded-3xl p-8"
+                         style={{ backfaceVisibility: 'hidden' }}>
+                      <div className="flex items-center justify-center mb-8">
+                        <div className="w-48 h-48 bg-gradient-to-br from-purple-900/30 to-black/50 rounded-2xl flex items-center justify-center border border-purple-700/20 overflow-hidden">
+                          <img 
+                            src={brand.logo} 
+                            alt="Brand logo"
+                            className="w-40 h-40 object-contain"
+                          />
+                        </div>
+                      </div>
+                      <div className="h-px bg-gradient-to-r from-transparent via-purple-700 to-transparent mb-6"></div>
+                      <p className="text-gray-400 text-center text-sm">Tap to see social links</p>
+                    </div>
+
+                    {/* Back */}
+                    <div className="absolute inset-0 backface-hidden bg-gradient-to-br from-purple-900/50 to-black border border-purple-600/30 rounded-3xl p-8 rotate-y-180"
+                         style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
+                      <div className="flex flex-col items-center justify-center h-full">
+                        <p className="text-gray-300 text-center mb-6">{brand.description}</p>
+                        <div className="flex items-center justify-center gap-4">
+                          {brand.socials.map((social, idx) => {
+                            const Icon = social.icon;
+                            return (
+                              <a
+                                key={idx}
+                                href={social.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-12 h-12 bg-gradient-to-br from-purple-700 to-purple-600 rounded-xl flex items-center justify-center text-white transition-all duration-300"
+                                aria-label={social.label}
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                <Icon className="w-5 h-5" />
+                              </a>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {/* Navigation */}
+            <div className="flex justify-center items-center gap-4 mt-6">
+              <button
+                onClick={prevSlide}
+                className="p-2 bg-purple-700 rounded-full text-white hover:bg-purple-600 transition-colors"
+                aria-label="Previous"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              
+              <div className="flex gap-2">
+                {brands.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      index === currentSlide ? 'bg-purple-500 w-8' : 'bg-gray-600'
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+
+              <button
+                onClick={nextSlide}
+                className="p-2 bg-purple-700 rounded-full text-white hover:bg-purple-600 transition-colors"
+                aria-label="Next"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop Grid with Flip Cards */}
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {brands.map((brand, index) => (
             <div
               key={index}
-              className={`group transition-all duration-700 ${
+              className={`transition-all duration-700 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <div className="relative bg-gradient-to-br from-purple-950/50 to-black border border-purple-700/30 rounded-3xl p-8 hover:border-purple-600/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-700/20 hover:transform hover:scale-105 h-full flex flex-col">
-                
-                {/* Logo Container */}
-                <div className="flex items-center justify-center mb-8">
-                  <div className="w-48 h-48 bg-gradient-to-br from-purple-900/30 to-black/50 rounded-2xl flex items-center justify-center border border-purple-700/20 group-hover:border-purple-600/40 transition-all duration-300 overflow-hidden">
-                    <img 
-                      src={brand.logo} 
-                      alt={`${brand.name} logo`}
-                      className="w-40 h-40 object-contain group-hover:scale-110 transition-transform duration-500"
-                      onError={(e) => {
-                        // Fallback if image fails to load
-                        e.target.style.display = 'none';
-                        e.target.parentElement.innerHTML = `<div class="text-purple-400 text-4xl font-bold">${brand.name.split(' ').map(w => w[0]).join('')}</div>`;
-                      }}
-                    />
+              <div 
+                className="perspective-1000 h-96 cursor-pointer"
+                onMouseEnter={() => toggleFlip(index)}
+                onMouseLeave={() => toggleFlip(index)}
+              >
+                <div className={`relative h-full transition-all duration-700 transform-style-3d ${flippedCards[index] ? 'rotate-y-180' : ''}`}
+                     style={{ transformStyle: 'preserve-3d' }}>
+                  
+                  {/* Front */}
+                  <div className="absolute inset-0 backface-hidden bg-gradient-to-br from-purple-950/50 to-black border border-purple-700/30 rounded-3xl p-8 hover:border-purple-600/50 transition-all duration-300"
+                       style={{ backfaceVisibility: 'hidden' }}>
+                    <div className="flex flex-col items-center justify-center h-full">
+                      <div className="w-48 h-48 bg-gradient-to-br from-purple-900/30 to-black/50 rounded-2xl flex items-center justify-center border border-purple-700/20 overflow-hidden mb-6">
+                        <img 
+                          src={brand.logo} 
+                          alt="Brand logo"
+                          className="w-40 h-40 object-contain"
+                        />
+                      </div>
+                      <div className="h-px w-full bg-gradient-to-r from-transparent via-purple-700 to-transparent"></div>
+                    </div>
+                  </div>
+
+                  {/* Back */}
+                  <div className="absolute inset-0 backface-hidden bg-gradient-to-br from-purple-900/50 to-black border border-purple-600/40 rounded-3xl p-8 rotate-y-180"
+                       style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
+                    <div className="flex flex-col items-center justify-center h-full text-center">
+                      <p className="text-gray-300 mb-8 text-lg">{brand.description}</p>
+                      <div className="flex items-center justify-center gap-4">
+                        {brand.socials.map((social, idx) => {
+                          const Icon = social.icon;
+                          return (
+                            <a
+                              key={idx}
+                              href={social.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="w-12 h-12 bg-gradient-to-br from-purple-700 to-purple-600 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300"
+                              aria-label={social.label}
+                            >
+                              <Icon className="w-5 h-5" />
+                            </a>
+                          );
+                        })}
+                      </div>
+                    </div>
                   </div>
                 </div>
-
-                {/* Brand Name */}
-                <h3 className="text-2xl font-bold text-white text-center mb-6 group-hover:text-purple-300 transition-colors">
-                  {brand.name}
-                </h3>
-
-                {/* Divider */}
-                <div className="h-px bg-gradient-to-r from-transparent via-purple-700 to-transparent mb-6 group-hover:via-purple-500 transition-colors"></div>
-
-                {/* Social Media Icons */}
-                <div className="flex items-center justify-center gap-4 mt-auto">
-                  {brand.socials.map((social, idx) => {
-                    const Icon = social.icon;
-                    return (
-                      <a
-                        key={idx}
-                        href={social.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-12 h-12 bg-gradient-to-br from-purple-900/50 to-black/50 border border-purple-700/30 rounded-xl flex items-center justify-center text-purple-400 hover:text-white hover:border-purple-500 hover:bg-gradient-to-br hover:from-purple-700 hover:to-purple-600 transition-all duration-300 hover:transform hover:scale-110 hover:shadow-lg hover:shadow-purple-600/50"
-                        aria-label={social.label}
-                      >
-                        <Icon className="w-5 h-5" />
-                      </a>
-                    );
-                  })}
-                </div>
-
-                {/* Decorative corner accent */}
-                <div className="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-purple-700/20 rounded-tr-2xl group-hover:border-purple-500/40 transition-colors"></div>
-                <div className="absolute bottom-4 left-4 w-12 h-12 border-b-2 border-l-2 border-purple-700/20 rounded-bl-2xl group-hover:border-purple-500/40 transition-colors"></div>
               </div>
             </div>
           ))}
         </div>
-
-        {/* Bottom decorative line */}
-        <div className={`mt-16 md:mt-24 transition-all duration-1000 delay-1000 ${
-          isVisible ? 'opacity-100' : 'opacity-0'
-        }`}>
-          <div className="h-1 bg-gradient-to-r from-transparent via-purple-700 to-transparent"></div>
-        </div>
       </div>
 
-      {/* Floating particles */}
-      <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-purple-600 rounded-full animate-ping opacity-75"></div>
-      <div className="absolute top-3/4 right-1/3 w-2 h-2 bg-purple-500 rounded-full animate-ping opacity-75 delay-500"></div>
-      <div className="absolute bottom-1/3 left-1/2 w-2 h-2 bg-purple-700 rounded-full animate-ping opacity-75 delay-1000"></div>
-
       <style jsx>{`
-        .bg-grid-pattern {
-          background-image: linear-gradient(#ffffff08 1px, transparent 1px),
-            linear-gradient(90deg, #ffffff08 1px, transparent 1px);
-          background-size: 50px 50px;
+        .perspective-1000 {
+          perspective: 1000px;
         }
-
-        .delay-500 { animation-delay: 0.5s; }
-        .delay-1000 { animation-delay: 1s; }
-        .delay-2000 { animation-delay: 2s; }
+        .transform-style-3d {
+          transform-style: preserve-3d;
+        }
+        .backface-hidden {
+          backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+          transform: rotateY(180deg);
+        }
       `}</style>
     </div>
   );

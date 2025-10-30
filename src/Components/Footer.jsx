@@ -1,89 +1,169 @@
-import React from 'react';
+import {useState, useEffect} from 'react';
 import { Facebook, Linkedin, Youtube, Instagram } from 'lucide-react';
-import Logo from '../assets/Images/logo.jpg'
+import logo from '../assets/Images/logo.jpg';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../Firebase/Firebase';
+import { Link } from 'react-router-dom';    
 const Footer = () => {
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+const [newsletterStatus, setNewsletterStatus] = useState('');
+const [isSubmittingNewsletter, setIsSubmittingNewsletter] = useState(false);
+
+const handleNewsletterSubmit = async () => {
+  if (!newsletterEmail) {
+    setNewsletterStatus('error-empty');
+    setTimeout(() => setNewsletterStatus(''), 3000);
+    return;
+  }
+
+   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(newsletterEmail)) {
+    setNewsletterStatus('error-invalid');
+    setTimeout(() => setNewsletterStatus(''), 3000);
+    return;
+  }
+
+  setIsSubmittingNewsletter(true);
+
+  try {
+    await addDoc(collection(db, 'newsletterSubscriptions'), {
+      email: newsletterEmail,
+      subscribedAt: serverTimestamp(),
+      status: 'active'
+    });
+
+    console.log('Newsletter subscription successful');
+    setNewsletterStatus('success');
+    setNewsletterEmail('');
+    setTimeout(() => setNewsletterStatus(''), 5000);
+    
+  } catch (error) {
+    console.error('Error subscribing to newsletter: ', error);
+    setNewsletterStatus('error-send');
+    setTimeout(() => setNewsletterStatus(''), 3000);
+  } finally {
+    setIsSubmittingNewsletter(false);
+  }
+};
   return (
-    <div className="">
- 
-      {/* Footer Section */}
-      <footer className="bg-black text-white py-12 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-            {/* Logo and Description */}
-            <div className="md:col-span-1 ">
-              <div className="w-40 mb-3">
-                <img src={Logo} alt="" />
-              </div>
-              <p className="text-gray-400 text-sm mb-6">
-                Strategic consulting and digital transformation for businesses across Africa.
-              </p>
-              {/* Social Media Icons */}
-              <div className="flex gap-4">
-                <a href="#" className="text-gray-400 hover:text-[#6bb3d8] transition-colors">
-                  <Facebook className="w-5 h-5" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-[#6bb3d8] transition-colors">
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-[#6bb3d8] transition-colors">
-                  <Youtube className="w-5 h-5" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-[#6bb3d8] transition-colors">
-                  <Instagram className="w-5 h-5" />
-                </a>
-              </div>
+    <footer className="bg-black text-white py-10 px-4">
+      <div className=" mx-auto">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-8 items-baseline">
+          {/* Left: Logo and Newsletter */}
+          <div>
+            <div className="w-32 mb-4">
+              <img src={logo} />
             </div>
+            
+            <h4 className="font-semibold mb-3 text-white text-lg">Subscribe</h4>
+            <p className="text-gray-400 text-sm mb-4 max-w-md">
+              Select topics and stay current with our latest insights
+            </p>
+            
+           <div>
+  <div className="flex gap-2 mb-6">
+    <input
+      type="email"
+      placeholder="Email address"
+      value={newsletterEmail}
+      onChange={(e) => setNewsletterEmail(e.target.value)}
+      className="flex-1 bg-white text-black border-2 border-gray-300 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-purple-600 transition-colors"
+    />
+    <button 
+      onClick={handleNewsletterSubmit}
+      disabled={isSubmittingNewsletter}
+      className="bg-purple-700 hover:bg-purple-600 disabled:bg-purple-900 disabled:cursor-not-allowed text-white px-8 py-2.5 rounded font-semibold text-sm transition-colors duration-300"
+    >
+      {isSubmittingNewsletter ? 'Submitting...' : 'Submit'}
+    </button>
+  </div>
 
-            {/* Services Column */}
-            <div>
-              <h4 className="font-semibold mb-4 text-white">Services</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="#" className="hover:text-[#6bb3d8] transition-colors">Brand Strategy</a></li>
-                <li><a href="#" className="hover:text-[#6bb3d8] transition-colors">Digital Marketing</a></li>
-                <li><a href="#" className="hover:text-[#6bb3d8] transition-colors">IT Solutions</a></li>
-              </ul>
-            </div>
+  {/* Status Messages */}
+  {newsletterStatus === 'success' && (
+    <div className="mb-4 p-3 bg-green-900/50 border border-green-600 rounded-lg text-green-400 text-sm">
+      ✓ Successfully subscribed to newsletter!
+    </div>
+  )}
+  
+  {newsletterStatus === 'error-empty' && (
+    <div className="mb-4 p-3 bg-red-900/50 border border-red-600 rounded-lg text-red-400 text-sm">
+      ✗ Please enter your email address
+    </div>
+  )}
+  
+  {newsletterStatus === 'error-invalid' && (
+    <div className="mb-4 p-3 bg-red-900/50 border border-red-600 rounded-lg text-red-400 text-sm">
+      ✗ Please enter a valid email address
+    </div>
+  )}
+  
+  {newsletterStatus === 'error-send' && (
+    <div className="mb-4 p-3 bg-red-900/50 border border-red-600 rounded-lg text-red-400 text-sm">
+      ✗ Failed to subscribe. Please try again.
+    </div>
+  )}
+</div>
 
-            {/* Company Column */}
-            <div>
-              <h4 className="font-semibold mb-4 text-white">Company</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="#" className="hover:text-[#6bb3d8] transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-[#6bb3d8] transition-colors">Case Studies</a></li>
-                <li><a href="#" className="hover:text-[#6bb3d8] transition-colors">Careers</a></li>
-                <li><a href="#" className="hover:text-[#6bb3d8] transition-colors">Locations</a></li>
-                <li><a href="#" className="hover:text-[#6bb3d8] transition-colors">Insights</a></li>
-              </ul>
-            </div>
-
-            {/* Newsletter Column */}
-            <div className='block'>
-              <h4 className="font-semibold mb-4 text-white">Stay Informed</h4>
-              <p className="text-gray-400 text-sm mb-4">
-                Subscribe for insights on digital transformation
-              </p>
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="flex-1 bg-transparent border border-gray-700 rounded-md px-4 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-purple-500"
-                />
-                <button className="bg-purple-700 hover:bg-purple-500 text-white px-6 py-2 rounded-md text-sm font-semibold transition-colors duration-300">
-                  Subscribe
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Border */}
-          <div className="border-t border-gray-800 pt-6">
-            <p className="text-gray-500 text-xs text-center">
-              © {new Date().getFullYear()} CODE-X. All rights reserved.
+            <p className="text-gray-300 text-sm font-medium italic">
+              Innovation tomorrow. Delivery today.
             </p>
           </div>
+
+          {/* Right: Links and Social */}
+          <div className="md:text-right space-y-6">
+            {/* Quick Links */}
+            <div className="flex flex-wrap gap-x-6 gap-y-2 md:justify-end text-sm">
+              <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact us</Link>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">FAQ</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy policy</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">Cookie preferences</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of use</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">Accessibility statement</a>
+            </div>
+            
+            {/* Social Media Icons */}
+            <div className="flex gap-3 md:justify-end">
+              <a 
+                href="#" 
+                className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-purple-700 hover:text-white transition-all duration-300"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a 
+                href="#" 
+                className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-purple-700 hover:text-white transition-all duration-300"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a 
+                href="#" 
+                className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-purple-700 hover:text-white transition-all duration-300"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a 
+                href="#" 
+                className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-purple-700 hover:text-white transition-all duration-300"
+                aria-label="YouTube"
+              >
+                <Youtube className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
         </div>
-      </footer>
-    </div>
+
+        {/* Bottom Copyright */}
+        <div className="border-t border-gray-800 pt-6">
+          <p className="text-gray-500 text-xs">
+            © {new Date().getFullYear()} Delacruz_Innovation. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
   );
 };
 

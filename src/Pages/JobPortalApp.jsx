@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Search, MapPin, ArrowLeft, Upload, FileText, X, Trash2 } from 'lucide-react';
-
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../Firebase/Firebase';
+import { Link } from 'react-router-dom';
 // Job Data
 const jobsData = [
   {
@@ -26,7 +28,7 @@ const jobsData = [
     ],
     industries: ["Agriculture & Farming"],
     capabilities: ["Operations Organizational Structure"],
-    hrEmail: "omoloyeamoss65@gmail.com"
+    hrEmail: "info@delacuzinnovation@gmail.com"
   },
   {
     id: 10234,
@@ -51,7 +53,7 @@ const jobsData = [
     ],
     industries: ["Defense & Security"],
     capabilities: ["Operations Management", "Strategic Planning"],
-    hrEmail: "careers@delacruzinnovation.com"
+    hrEmail: "careers@defenceinnovations.com"
   },
   {
     id: 10567,
@@ -339,6 +341,7 @@ const JobDetailsPage = ({ job, onBack, onApply }) => {
 
 // Application Component
 const ApplicationPage = ({ job, onBack, onSuccess }) => {
+    const [status, setStatus] = useState('');
   const [formData, setFormData] = useState({
     fullName: '',
     phone: '',
@@ -385,58 +388,80 @@ const ApplicationPage = ({ job, onBack, onSuccess }) => {
     setUploadedFile(null);
   };
 
-  const handleSubmit = async () => {
-    if (!formData.fullName || !formData.email || !formData.phone || !formData.coverLetter) {
-      alert('Please fill in all required fields (Name, Email, Phone, Cover Letter)');
-      return;
-    }
+const handleSubmit = async () => {
+  if (!formData.fullName || !formData.email || !formData.phone || !formData.coverLetter) {
+    setStatus('error');
+    return;
+  }
 
-    if (!uploadedFile) {
-      alert('Please upload your resume');
-      return;
-    }
+  if (!uploadedFile) {
+    setStatus('error-file');
+    return;
+  }
 
-    setIsSubmitting(true);
+  setIsSubmitting(true);
 
-    // Prepare email content
-    const emailSubject = `Job Application: ${job.title} - ${formData.fullName}`;
-    const emailBody = `
-Job Application Details
+  try {
+    const reader = new FileReader();
+    reader.readAsDataURL(uploadedFile);
+    
+    reader.onload = async () => {
+      try {
+        const docRef = await addDoc(collection(db, 'jobApplications'), {
+          jobTitle: job.title,
+          jobCompany: job.company,
+          jobId: job.id,
+          jobType: job.type,
+          hrEmail: job.hrEmail,
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          portfolioUrl: formData.portfolioUrl || 'Not provided',
+          coverLetter: formData.coverLetter,
+          resumeName: uploadedFile.name,
+          resumeSize: uploadedFile.size,
+          resumeType: uploadedFile.type,
+          resumeData: reader.result,
+          submittedAt: serverTimestamp(),
+          status: 'pending'
+        });
 
-Position: ${job.title}
-Company: ${job.company}
-Job ID: ${job.id}
+        console.log('Application submitted with ID: ', docRef.id);
+        setStatus('success');
+        
+        setFormData({
+          fullName: '',
+          phone: '',
+          email: '',
+          portfolioUrl: '',
+          coverLetter: ''
+        });
+        setUploadedFile(null);
+        
+      } catch (error) {
+        console.error('Error adding document: ', error);
+        setStatus('error-send');
+      } finally {
+        setIsSubmitting(false);
+      }
+    };
 
-Applicant Information:
-Name: ${formData.fullName}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Portfolio: ${formData.portfolioUrl || 'Not provided'}
-
-Cover Letter:
-${formData.coverLetter}
-
-Resume: ${uploadedFile.name} (${(uploadedFile.size / 1024).toFixed(2)} KB)
-
-Note: This is an automated application submission from the job portal.
-    `.trim();
-
-    // Create mailto link
-    const mailtoLink = `mailto:${job.hrEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-
-    // Open email client
-    window.location.href = mailtoLink;
-
-    setTimeout(() => {
+    reader.onerror = () => {
+      console.error('Error reading file');
+      setStatus('error-send');
       setIsSubmitting(false);
-      alert(`Application prepared! An email to ${job.hrEmail} has been opened in your default email client.\n\nPlease attach your resume (${uploadedFile.name}) before sending.`);
-      onSuccess();
-    }, 1000);
-  };
+    };
+
+  } catch (error) {
+    console.error('Error: ', error);
+    setStatus('error-send');
+    setIsSubmitting(false);
+  }
+};
 
   return (
-    <div className="py-24 px-4">
-      <div className="max-w-4xl mx-auto">
+    <div className="py-30 px-4">
+      <div className="max-w-7xl mx-auto">
         <button
           onClick={onBack}
           className="flex items-center text-white hover:text-purple-400 mb-6 transition-colors"
@@ -445,7 +470,7 @@ Note: This is an automated application submission from the job portal.
           Back to Job Details
         </button>
 
-        <div className="bg-purple-950 rounded-lg p-8 shadow-sm">
+        <div className="bg-purple-700/[0.8] rounded-lg p-8 shadow-sm">
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-gray-100 mb-2">
               Apply for {job.title}
@@ -600,6 +625,57 @@ Note: This is an automated application submission from the job portal.
           <p className="text-gray-400 text-xs mt-4 text-center">
             Your application will be sent to: {job.hrEmail}
           </p>
+          {/* Status Modal */}
+{status && (
+  <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 px-4">
+    <div className="max-w-sm w-full bg-black text-gray-50 rounded-2xl p-8 shadow-2xl transform transition-all duration-300 scale-100">
+      <div className="text-center">
+        {/* Success Icon */}
+        <div className="relative w-16 h-16 mx-auto mb-4">
+          <div className="w-16 h-16 bg-purple-700 rounded-full flex items-center justify-center">
+            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          {/* Sparkle decoration */}
+          <div className="absolute -top-1 -right-1 text-purple-700">
+            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2z" />
+            </svg>
+          </div>
+        </div>
+
+        {/* Title */}
+        <h3 className="text-xl font-bold text-gray-50 mb-2">
+          {status === 'success' ? 'Application Received !' : 'Error'}
+        </h3>
+
+        {/* Message */}
+        <p className="text-gray-50 text-sm mb-6 leading-relaxed">
+          {status === 'success' 
+            ? "Thank you for applying for this role, we will review your application and a member will reach out to you." 
+            : 'Please fill in all required fields.'}
+        </p>
+
+        {/* Buttons */}
+        <div className="flex gap-3">
+         <Link to="/jobs"
+            onClick={() => setStatus('')}
+            className="flex-1 px-6 py-2.5 bg-indigo-600 text-white rounded-lg font-medium text-sm hover:bg-indigo-700 transition-colors"
+          >
+            View more jobs
+          </Link>
+          <button
+            onClick={() => setStatus('')}
+            className="flex-1 px-6 py-2.5 bg-gray-100 text-gray-700 rounded-lg font-medium text-sm hover:bg-gray-200 transition-colors"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
         </div>
       </div>
     </div>
