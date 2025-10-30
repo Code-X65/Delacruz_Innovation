@@ -135,7 +135,7 @@ const services = [
 </Link>
               </nav>
 
-              <div className="bg-purple-700 hover:bg-purple-600 text-white px-6 py-2.5 rounded-lg cursor-pointer font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-gray-700/50">
+              <div className="bg-purple-700 hover:bg-purple-600 text-white px-6 py-2.5 rounded-lg cursor-pointer font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-gray-700/50 hidden">
                 Subscribe
               </div>
             </div>
@@ -222,7 +222,7 @@ const services = [
   </div>
 </Link>
 
-             <div className="bg-purple-700 hover:bg-gray-600 text-white px-6 py-3 rounded-lg cursor-pointer font-medium transition-all duration-300 text-center mt-2">
+             <div className="bg-purple-700 hover:bg-gray-600 text-white px-6 py-3 rounded-lg cursor-pointer font-medium transition-all duration-300 text-center mt-2 hidden">
                 Subscribe
               </div>
             </nav>

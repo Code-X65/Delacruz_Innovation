@@ -3,6 +3,8 @@ import { ArrowLeft, Upload, FileText, Trash2 } from 'lucide-react';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../Firebase/Firebase';
 import { useNavigate, useParams, Link } from 'react-router-dom';
+import PhoneInput from 'react-phone-number-input'
+import 'react-phone-number-input/style.css'
 
 const ApplicationPage = ({ jobsData }) => {
     const [status, setStatus] = useState('');
@@ -63,7 +65,7 @@ const ApplicationPage = ({ jobsData }) => {
     setUploadedFile(null);
   };
   const handleSubmit = async () => {
-    if (!formData.fullName || !formData.email || !formData.phone || !formData.coverLetter) {
+    if (!formData.fullName || !formData.email || !formData.phone) {
       setStatus('error');
       return;
     }
@@ -173,18 +175,19 @@ const ApplicationPage = ({ jobsData }) => {
                 </div>
   
                 <div>
-                  <label className="block text-gray-50 font-medium mb-2 text-sm">
-                    Phone<span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-2.5 bg-black border border-gray-300 rounded-md text-gray-50 text-sm focus:outline-none focus:border-purple-700"
-                    placeholder="Enter your phone number"
-                  />
-                </div>
+  <label className="block text-gray-50 font-medium mb-2 text-sm">
+    Phone<span className="text-red-500">*</span>
+  </label>
+  <PhoneInput
+    international
+    countryCallingCodeEditable={false}
+    defaultCountry="US"
+    value={formData.phone}
+    onChange={(value) => setFormData(prev => ({ ...prev, phone: value || '' }))}
+    className="w-full px-4 py-2.5 bg-black border border-gray-300 rounded-md text-gray-50 text-sm focus:outline-none focus:border-purple-700"
+    placeholder="Enter your phone number"
+  />
+</div>
               </div>
   
               <div className="grid md:grid-cols-2 gap-4">
@@ -220,7 +223,7 @@ const ApplicationPage = ({ jobsData }) => {
   
             <div className="mb-8">
               <label className="block text-gray-50 font-medium mb-2 text-sm">
-                Cover Letter<span className="text-red-500">*</span>
+                Cover Letter
               </label>
               <textarea
                 name="coverLetter"

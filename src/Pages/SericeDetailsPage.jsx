@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Check, Eye, Lightbulb, Palette, Rocket, TrendingUp, Users, Shield, Server } from 'lucide-react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 // Import your services data
 import servicesData from '../ServicesData.json';
@@ -228,9 +228,9 @@ const ServiceDetailsPage = () => {
               <p className="text-purple-100 text-base sm:text-lg max-w-2xl mx-auto mb-6">
                 Let's discuss how our {service.title.toLowerCase()} can drive your success
               </p>
-              <button className="bg-white text-purple-700 hover:bg-gray-100 font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+              <Link to="/consultation_form" className="bg-white text-purple-700 hover:bg-gray-100 font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Schedule a Consultation
-              </button>
+              </Link>
             </div>
             
             {/* Decorative elements */}

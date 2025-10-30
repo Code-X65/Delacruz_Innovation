@@ -62,14 +62,7 @@ const OurHistory = () => {
               Today in 2025, we're leading the charge in AI-driven solutions and sustainable technology, shaping the future of enterprise transformation. Our journey continues as we help organizations navigate the complexities of digital innovation and achieve lasting success.
             </p>
 
-            <div className="text-center mt-10">
-              <a 
-                href="#contact" 
-                className="inline-flex items-center px-8 py-3 bg-purple-700 hover:bg-purple-600 text-white font-semibold rounded-lg transition-colors duration-300"
-              >
-                Get Started Today
-              </a>
-            </div>
+           
           </div>
         </div>
       </div>

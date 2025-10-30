@@ -66,7 +66,7 @@ const OfficesSection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black py-24">
+    <div className="min-h-screen bg-black pt-36">
       {/* Hero Section with Map Background */}
       <div className="relative h-[70vh] overflow-hidden">
         {/* Map Background - Using a world map pattern */}

@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -141,7 +142,7 @@ const Hero = () => {
                   : 'opacity-0 translate-y-10'
               }`}
             >
-              <button className="group relative inline-flex items-center gap-2 sm:gap-3 bg-purple-600 hover:bg-purple-700 text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-lg font-semibold text-sm sm:text-base md:text-lg shadow-lg hover:shadow-2xl hover:shadow-purple-600/50 transition-all duration-500 hover:scale-105 overflow-hidden">
+              <Link to='/consultation_form' className="group relative inline-flex items-center gap-2 sm:gap-3 bg-purple-600 hover:bg-purple-700 text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-lg font-semibold text-sm sm:text-base md:text-lg shadow-lg hover:shadow-2xl hover:shadow-purple-600/50 transition-all duration-500 hover:scale-105 overflow-hidden">
                 {/* Button Background Animation */}
                 <span className="absolute inset-0 bg-purple-800 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
                 
@@ -151,7 +152,7 @@ const Hero = () => {
                 
                 {/* Shine Effect */}
                 <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></span>
-              </button>
+              </Link>
             </div>
 
             {/* Stats Section */}
@@ -183,7 +184,7 @@ const Hero = () => {
         </div>
 
         {/* Video Indicator Dots */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2 z-20">
+        {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2 z-20">
           {videos.map((_, index) => (
             <button
               key={index}
@@ -196,7 +197,7 @@ const Hero = () => {
               aria-label={`Switch to video ${index + 1}`}
             />
           ))}
-        </div>
+        </div> */}
       </div>
 
       <style jsx>{`

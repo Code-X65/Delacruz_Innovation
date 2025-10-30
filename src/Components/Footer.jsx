@@ -137,43 +137,42 @@ const handleNewsletterSubmit = async () => {
             {/* Quick Links */}
             <div className="flex flex-wrap gap-x-6 gap-y-2 md:justify-end text-sm">
               <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact us</Link>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">FAQ</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy policy</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Cookie preferences</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of use</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Accessibility statement</a>
+              <Link to="/faq" className="text-gray-400 hover:text-white transition-colors">FAQ</Link>
+              <Link to="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">Privacy policy</Link>
+              <Link to="/terms-of-use" className="text-gray-400 hover:text-white transition-colors">Terms of use</Link>
+              <Link to="/accessibility-statement" className="text-gray-400 hover:text-white transition-colors">Accessibility statement</Link>
             </div>
             
             {/* Social Media Icons */}
             <div className="flex gap-3 md:justify-end">
-              <a 
-                href="#" 
+              <Link 
+                to="#" 
                 className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-purple-700 hover:text-white transition-all duration-300"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
-              </a>
-              <a 
-                href="#" 
+              </Link>
+              <Link 
+                to="#" 
                 className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-purple-700 hover:text-white transition-all duration-300"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />
-              </a>
-              <a 
-                href="#" 
+              </Link>
+              <Link 
+                to="#" 
                 className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-purple-700 hover:text-white transition-all duration-300"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
-              </a>
-              <a 
-                href="#" 
+              </Link>
+              <Link 
+                to="#" 
                 className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-purple-700 hover:text-white transition-all duration-300"
                 aria-label="YouTube"
               >
                 <Youtube className="w-5 h-5" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -9,6 +9,8 @@ import { jobsData } from './Components/jobsData'
 import JobListingsPage from './Pages/JobListingsPage'
 import JobDetailsPage from './Pages/JobDetailsPage'
 import ApplicationPage from './Pages/ApplicationPage'
+import FAQ from './Components/FAQ'
+import ITConsultantForm from './Pages/ITConsultantForm'
 // Loading component
 const LoadingSpinner = () => (
   <div style={{
@@ -44,6 +46,11 @@ const CaseStudies = lazy(() => import('./Pages/CaseStudies'))
 const OfficesSection = lazy(() => import('./Pages/OfficesSection'))
 const InsightsListPage = lazy(() => import('./Pages/InsightsListPage'))
 const InsightDetailPage = lazy(() => import('./Pages/InsightDetailPage'))
+const TermOfUse = lazy(() => import('./Components/TermOfUse'))
+
+const AccessibilityStatement = lazy(() => import('./Components/AccessibilityStatement'))
+const PrivacyPolicy = lazy(() => import('./Components/PrivacyPolicy'))
+
 
 
 const NotFound = lazy(() => import('./Pages/NotFound'))
@@ -82,6 +89,14 @@ const AppRoutes = () => {
           <Route path="/job/:jobId" element={<JobDetailsPage jobsData={jobsData} />} />
           <Route path="/job/:jobId/apply" element={<ApplicationPage jobsData={jobsData} />} />
           <Route path='contact' element={<ContactPage />} />
+         <Route path='consultation_form' element={<ITConsultantForm />} />
+          <Route path='terms-of-use' element={<TermOfUse />} />
+          <Route path='accessibility-statement' element={<AccessibilityStatement />} /> 
+          {/* <Route path='privacy-policy' element={<PrivacyPolicy />} /> */}
+
+        
+        
+          <Route path='faq' element={<FAQ />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
