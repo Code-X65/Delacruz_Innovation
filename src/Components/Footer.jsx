@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import { Facebook, Linkedin, Youtube, Instagram } from 'lucide-react';
 import logo from '../assets/Images/logo.jpg';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { collection, addDoc, serverTimestamp, query, where, getDocs } from 'firebase/firestore';
 import { db } from '../Firebase/Firebase';
 import { Link } from 'react-router-dom';    
 const Footer = () => {
@@ -16,7 +16,7 @@ const handleNewsletterSubmit = async () => {
     return;
   }
 
-   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(newsletterEmail)) {
     setNewsletterStatus('error-invalid');
     setTimeout(() => setNewsletterStatus(''), 3000);
@@ -26,6 +26,22 @@ const handleNewsletterSubmit = async () => {
   setIsSubmittingNewsletter(true);
 
   try {
+    // Check if email already exists
+    const { query, where, getDocs } = await import('firebase/firestore');
+    const q = query(
+      collection(db, 'newsletterSubscriptions'), 
+      where('email', '==', newsletterEmail)
+    );
+    const querySnapshot = await getDocs(q);
+
+    if (!querySnapshot.empty) {
+      setNewsletterStatus('error-duplicate');
+      setTimeout(() => setNewsletterStatus(''), 3000);
+      setIsSubmittingNewsletter(false);
+      return;
+    }
+
+    // If email doesn't exist, proceed with subscription
     await addDoc(collection(db, 'newsletterSubscriptions'), {
       email: newsletterEmail,
       subscribedAt: serverTimestamp(),
@@ -55,6 +71,9 @@ const handleNewsletterSubmit = async () => {
             <div className="w-32 mb-4">
               <img src={logo} />
             </div>
+             <p className="text-gray-300 text-sm font-medium italic">
+              Innovation tomorrow. Delivery today.
+            </p>
             
             <h4 className="font-semibold mb-3 text-white text-lg">Subscribe</h4>
             <p className="text-gray-400 text-sm mb-4 max-w-md">
@@ -103,11 +122,14 @@ const handleNewsletterSubmit = async () => {
       ✗ Failed to subscribe. Please try again.
     </div>
   )}
+  {newsletterStatus === 'error-duplicate' && (
+  <div className="mb-4 p-3 bg-yellow-900/50 border border-yellow-600 rounded-lg text-yellow-400 text-sm">
+    ✗ This email is already subscribed to our newsletter
+  </div>
+)}
 </div>
 
-            <p className="text-gray-300 text-sm font-medium italic">
-              Innovation tomorrow. Delivery today.
-            </p>
+           
           </div>
 
           {/* Right: Links and Social */}

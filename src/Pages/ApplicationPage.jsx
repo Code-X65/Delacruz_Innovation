@@ -137,7 +137,7 @@ const ApplicationPage = ({ jobsData }) => {
   // Replace onBack with handleBackToDetails
    return (
       <div className="py-30 px-4">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl bg-black mx-auto">
           <button
             onClick={handleBackToDetails}
             className="flex items-center text-white hover:text-purple-400 mb-6 transition-colors"

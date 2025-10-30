@@ -3,7 +3,7 @@ export const jobsData = [
     {
     id: 15178,
     title: "Associate",
-    company: "McKinsey",
+    company: "Delacruz Innovation",
     type: "Consulting",
     locations: ["Abu Dhabi", "Addis Ababa", "Almaty", "Amsterdam", "Astana", "Athens", "Atlanta"],
     description: "Do you want to work on complex and pressing challenges—the kind that bring together curious, ambitious, and determined leaders who strive to become better every day?",
