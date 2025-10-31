@@ -255,11 +255,11 @@ const InsightDetailPage = () => {
             Want to learn more about our insights?
           </h3>
           <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-            Subscribe to our newsletter and stay updated with the latest trends, analysis, and perspectives.
+            Stop losing time and money to manual workflows. Contact Delacruz Innovations today to schedule a discovery session and explore how we can help your business automate processes, increase efficiency, and scale for growth.
           </p>
-          <Link to="/insights" className="inline-block">
+          <Link to="/consultation_form" className="inline-block">
             <button className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105">
-              View All Insights
+              Book A Free 30 mins Discovery Call
             </button>
           </Link>
         </div>

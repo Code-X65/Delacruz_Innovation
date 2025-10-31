@@ -24,11 +24,12 @@ const closeMobileMenu = () => {
   }, []);
 
 const services = [
-  { name: 'Technology & IT Services', slug: 'technology-it-services' },
-  { name: 'Cyber Security Consultation', slug: 'cyber-security-consultation' },
-  { name: 'Business Management Consulting', slug: 'business-management-consulting' },
-  { name: 'Marketing, Branding & Advertising', slug: 'marketing-branding-advertising' },
-  { name: 'Software Innovation', slug: 'software-innovation' }
+  { name: 'Digital Transformation', slug: 'digital-transformation' },
+  { name: 'SaaS/PaaS Development', slug: 'SaaS-PaaS-Development' },
+  { name: 'IT Consulting', slug: 'it-consulting' },
+  { name: 'Training & Support', slug: 'training-support' },
+  { name: 'Brand Management', slug: 'brand_management' },
+  { name: 'Digital Marketing', slug: 'digital_marketing' },
 ]
 
   return (

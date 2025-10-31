@@ -93,14 +93,16 @@ const handleShare = async () => {
             <p className="text-gray-100 leading-relaxed">{job.description}</p>
           </div>
   
-          <div className="mb-8">
+             <div className="mb-8">
             <h2 className="text-2xl font-bold text-purple-400 mb-4">YOUR IMPACT</h2>
             <p className="text-purple-300 text-lg mb-4">{job.impact}</p>
-            <p className="text-gray-100 leading-relaxed mb-4">{job.impactDetails}</p>
+            {job.impactDetails && (
+              <p className="text-gray-100 leading-relaxed mb-4">{job.impactDetails}</p>
+            )}
             
-            {job.responsibilities && (
+            {job.responsibilities && job.responsibilities.length > 0 && (
               <div className="mt-4">
-                <p className="text-gray-100 mb-2">Your responsibilities include:</p>
+                <p className="text-gray-100 mb-2 font-semibold">Your responsibilities include:</p>
                 <ul className="text-gray-100 space-y-2">
                   {job.responsibilities.map((resp, idx) => (
                     <li key={idx}>• {resp}</li>
@@ -124,7 +126,7 @@ const handleShare = async () => {
             </div>
           </div>
   
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
+          {/* <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div>
               <h3 className="text-xl font-bold text-white mb-3">Industries</h3>
               {job.industries.map((industry, idx) => (
@@ -137,7 +139,7 @@ const handleShare = async () => {
                 <p key={idx} className="text-gray-100">• {capability}</p>
               ))}
             </div>
-          </div>
+          </div> */}
   
           <div className="flex gap-4 pt-6 border-t border-gray-800">
             <button 

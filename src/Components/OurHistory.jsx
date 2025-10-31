@@ -14,8 +14,8 @@ const OurHistory = () => {
         <div className={`text-center mb-12 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
         }`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">History</span>
+          <h2 className="text-4xl md:text-5xl font-bold  text-white mb-4">
+            The Delacruz <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600"> Story</span> 
           </h2>
         </div>
 
@@ -39,15 +39,22 @@ const OurHistory = () => {
         }`} style={{ transitionDelay: '400ms' }}>
           <div className="prose prose-invert max-w-none">
             <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              Founded in 2010, CODE-X began with a vision to transform businesses through innovative IT solutions and strategic consulting. What started as a small team of passionate technologists has grown into a global leader in digital transformation.
+            Founded in 2017 in the United Kingdom, Delacruz Innovations was built on one belief - that Africa deserves technology solutions engineered with the same precision and ambition as global leaders.
+
             </p>
             
             <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              In 2013, we achieved our first major breakthrough by launching our proprietary digital transformation framework, which helped over 50 enterprises modernize their operations. This innovation set the foundation for our reputation as thought leaders in the industry.
+              From our early beginnings delivering IT consultancy and transformation projects in the UK public and private sectors, we saw an opportunity to bring that value home - to Lagos, Nigeria and redefine what excellence in digital innovation means locally.
+
             </p>
             
             <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              By 2016, our success led to global expansion across three continents, establishing partnerships with Fortune 500 companies. Our commitment to excellence and client success opened doors to new markets and opportunities worldwide.
+             Today, Delacruz Innovations stands as a bridge between international best practice and Nigerian business realities. We partner with organisations across government, education, finance, and enterprise, helping them modernise their systems, automate workflows, and empower their teams with tools built for the future of work.
+
+          <br /> <br />
+
+We’re not just building software  we’re building capacity, competitiveness, and confidence in Africa’s digital economy.
+
             </p>
             
             <p className="text-gray-300 text-lg leading-relaxed mb-6">

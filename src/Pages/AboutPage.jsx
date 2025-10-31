@@ -8,6 +8,7 @@ import FeaturedImpact from '../Components/FeaturedImpact'
 import FAQ from '../Components/FQA'
 import OurHistory from '../Components/OurHistory'
 import MissionVisionValues from '../Components/MissionVission'
+import DelacruzLeadership from '../Components/DelacruzLeadership'
 const AboutPage = () => {
   return (
     <>
@@ -17,6 +18,7 @@ const AboutPage = () => {
     {/* <BetterBusiness /> */}
     <MissionVisionValues />
     {/* <AboutFeatures /> */}
+    <DelacruzLeadership/>
     <BrandEcoSyst />
     {/* <FeaturedImpact /> */}
     

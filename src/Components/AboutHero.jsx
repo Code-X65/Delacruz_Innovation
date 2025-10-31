@@ -44,9 +44,10 @@ const AboutHero = () => {
               }`}
               style={{ transitionDelay: '200ms' }}
             >
-              Transforming businesses through{' '}
+              Shaping Africa’s Digital Future {' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">
-                innovation and expertise
+               One Solution at a Time.
+
               </span>
             </h1>
 
@@ -57,10 +58,11 @@ const AboutHero = () => {
               }`}
               style={{ transitionDelay: '400ms' }}
             >
-              We partner with bold leaders to accelerate sustainable and inclusive growth. From strategy to execution, we deliver solutions that drive real impact.
+             A digitally empowered Africa where innovation drives inclusion, efficiency, and sustainable growth.
+
             </p>
 
-            {/* Stats */}
+            {/* Stats
             <div
               className={`grid grid-cols-3 gap-6 mb-8 transition-all duration-1000 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
@@ -72,16 +74,16 @@ const AboutHero = () => {
                 <div className="text-gray-400 text-sm">Years Experience</div>
               </div>
               <div className="text-center md:text-left">
-                <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-1">500+</div>
+                <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-1">36+</div>
                 <div className="text-gray-400 text-sm">Projects Delivered</div>
               </div>
               <div className="text-center md:text-left">
                 <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-1">50+</div>
                 <div className="text-gray-400 text-sm">Countries</div>
               </div>
-            </div>
+            </div> */}
 
-            {/* CTA Button */}
+            {/* CTA Button
             <div
               className={`transition-all duration-1000 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
@@ -95,7 +97,7 @@ const AboutHero = () => {
                 Learn More About Us
                 <ArrowRight className="w-5 h-5" />
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
 

@@ -4,118 +4,105 @@ const PrivacyPolicy = () => {
   const sections = [
     {
       title: "Introduction",
-      content: "Delacruz Innovation ('we', 'our', or 'us') is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site."
+      content: "Delacruz Innovations (“we”, “us”, “our”) is committed to protecting and respecting your privacy. This Privacy Policy explains what personal data we collect, how we use it, how we share it, and your rights in relation to it. This policy applies to our website, services, and engagements across Nigeria and beyond."
     },
     {
-      title: "Information We Collect",
-      content: "We collect information that you provide directly to us, information we obtain automatically when you use our services, and information from third-party sources. The types of information we may collect include:",
-      subsections: [
-        {
-          subtitle: "Personal Information",
-          list: [
-            "Name and contact information (email address, phone number, mailing address)",
-            "Professional information (job title, company name, industry)",
-            "Account credentials (username and password)",
-            "Payment information (credit card details, billing address)",
-            "Communications and correspondence with us"
-          ]
-        },
-        {
-          subtitle: "Automatically Collected Information",
-          list: [
-            "Device information (IP address, browser type, operating system)",
-            "Usage data (pages visited, time spent on pages, click patterns)",
-            "Cookies and similar tracking technologies",
-            "Location data (general geographic location)",
-            "Referral sources and search terms"
-          ]
-        }
-      ]
+      title: " Scope and Legal Basis",
+      content: "This policy covers all personal data we process about clients, prospects, candidates, staff, suppliers, and visitors. We process data in accordance with the Nigeria Data Protection Act 2023 and other applicable laws. ",
+      // subsections: [
+      //   {
+      //     subtitle: "Personal Information",
+      //     list: [
+      //       "Name and contact information (email address, phone number, mailing address)",
+      //       "Professional information (job title, company name, industry)",
+      //       "Account credentials (username and password)",
+      //       "Payment information (credit card details, billing address)",
+      //       "Communications and correspondence with us"
+      //     ]
+      //   },
+      //   {
+      //     subtitle: "Automatically Collected Information",
+      //     list: [
+      //       "Device information (IP address, browser type, operating system)",
+      //       "Usage data (pages visited, time spent on pages, click patterns)",
+      //       "Cookies and similar tracking technologies",
+      //       "Location data (general geographic location)",
+      //       "Referral sources and search terms"
+      //     ]
+      //   }
+      // ]
     },
     {
-      title: "How We Use Your Information",
-      content: "We use the information we collect for various purposes, including:",
+      title: " Types of Data We Collect",
+      content: "We may collect:",
       list: [
-        "Providing, maintaining, and improving our services",
-        "Processing transactions and sending related information",
-        "Sending you technical notices, updates, security alerts, and support messages",
-        "Responding to your comments, questions, and customer service requests",
-        "Communicating with you about products, services, offers, and events",
-        "Monitoring and analyzing trends, usage, and activities",
-        "Detecting, preventing, and addressing technical issues and fraudulent activity",
-        "Personalizing and improving your experience on our website",
-        "Facilitating contests, sweepstakes, and promotions",
-        "Carrying out any other purpose described to you at the time of collection"
+        "Contact information (name, email address, telephone number)",
+        "Organisation details (company name, job title, industry)",
+        "Project information (scope, requirements, deliverables)",
+        "Usage data (website visits, service usage metrics)",
+        "Sensitive/regulated data only where required and with explicit consent.",
+       
       ]
     },
     {
-      title: "How We Share Your Information",
-      content: "We may share your information in the following circumstances:",
+      title: "How and Why We Use Your Data",
+      content: "We use your data for:",
       list: [
-        "With service providers who perform services on our behalf",
-        "With business partners for joint marketing or promotional purposes",
-        "In connection with a merger, sale, or acquisition of all or part of our company",
-        "To comply with legal obligations or respond to lawful requests",
-        "To protect our rights, property, or safety, and that of our users",
-        "With your consent or at your direction",
-        "In aggregated or de-identified form that cannot reasonably be used to identify you"
+        "Delivering consultancy, platform development, automation and training services",
+        "Contract fulfilment, billing, project management and client communications",
+        "Improving our services, conducting audits, analytics and business improvement",
+        "Marketing communications (only with your consent)",
+        "Fulfilling legal, regulatory and contractual obligations."
       ]
     },
     {
-      title: "Cookies and Tracking Technologies",
-      content: "We use cookies, web beacons, and similar tracking technologies to collect information about your browsing activities. You can control cookies through your browser settings and other tools. However, if you block or reject cookies, some features of our website may not function properly.",
+      title: "Data Sharing",
+      content: "We may share your personal data with:",
       list: [
-        "Essential cookies: Required for basic site functionality",
-        "Analytics cookies: Help us understand how visitors use our site",
-        "Marketing cookies: Used to deliver relevant advertisements",
-        "Preference cookies: Remember your settings and preferences"
+        "Our trusted sub‑contractors, vendors or technology partners (under strict agreements)",
+        "Regulatory authorities if required by law",
+        "Acquirers or business partners in the event of a merger or sale (with appropriate protections).",
+      
       ]
     },
     {
-      title: "Data Security",
-      content: "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your information, we cannot guarantee its absolute security."
+      title: "International Transfers",
+      content: "If we transfer personal data outside Nigeria (e.g., to cloud services or partners), we ensure appropriate safeguards are in place, such as contractual clauses or recognised frameworks. nse.org.ng"
     },
     {
       title: "Data Retention",
-      content: "We retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. When we no longer need your information, we will securely delete or anonymize it in accordance with our data retention policies."
+      content: "We retain personal data only for as long as necessary to fulfil the purpose of collection or as required by law. When your data is no longer needed, we securely dispose of or anonymise it."
     },
     {
-      title: "Your Privacy Rights",
-      content: "Depending on your location, you may have certain rights regarding your personal information:",
+      title: "Security",
+      content: "You have the right to:",
       list: [
-        "Access: Request access to the personal information we hold about you",
-        "Correction: Request correction of inaccurate or incomplete information",
-        "Deletion: Request deletion of your personal information",
-        "Restriction: Request restriction of processing of your information",
-        "Portability: Request transfer of your information to another service",
-        "Objection: Object to our processing of your information",
-        "Withdraw Consent: Withdraw consent where we rely on consent to process your information",
-        "Opt-out: Opt out of marketing communications at any time"
+        "Be informed about how your data is processed",
+        "Access your personal data and obtain a copy",
+        "Request correction or deletion of your data",
+        "Object to processing on legitimate grounds",
+        "Request data portability where applicable",
+        "Withdraw consent at any time (where applicable)",
+        "Lodge a complaint with the Nigeria Data Protection Commission. ",
+     
       ]
     },
     {
-      title: "International Data Transfers",
-      content: "Your information may be transferred to and processed in countries other than your country of residence. These countries may have data protection laws that are different from the laws of your country. We take appropriate safeguards to ensure that your information remains protected in accordance with this Privacy Policy when transferred internationally."
+      title: "Cookies and Website Tracking",
+      content: "Our website uses cookies and tracking technologies to enhance user experience and gather usage statistics. You may disable non‑essential cookies via your browser settings."
     },
     {
-      title: "Children's Privacy",
-      content: "Our services are not intended for children under the age of 13 (or 16 in the European Union). We do not knowingly collect personal information from children under these ages. If you are a parent or guardian and believe your child has provided us with personal information, please contact us so we can delete such information."
+      title: "Changes to This Policy",
+      content: "We review this policy periodically and may update it. The latest version will always be posted on our website and dated accordingly."
     },
-    {
-      title: "Third-Party Links and Services",
-      content: "Our website may contain links to third-party websites and services that are not operated by us. We are not responsible for the privacy practices of these third parties. We encourage you to review the privacy policies of any third-party sites you visit."
-    },
-    {
-      title: "Changes to This Privacy Policy",
-      content: "We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the new Privacy Policy on this page and updating the 'Last Updated' date. We encourage you to review this Privacy Policy periodically to stay informed about how we are protecting your information."
-    },
+
     {
       title: "Contact Us",
-      content: "If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us:",
+      content: "If you have questions or would like to exercise your rights, please contact: Data Protection Officer (DPO)",
       contact: {
-        email: "privacy@delacruzinnovation.com",
-        phone: "+1 (555) 123-4567",
-        address: "Delacruz Innovation, Privacy Office, 123 Innovation Drive, New York, NY 10001",
+        email: "dpo@delacruzinnovations.com",
+        phone: " ‪+44 (0)7342274470‬ (UK) | ‪+234 9052765358‬ (NG)",
+        address: "22 Fellery Street, Lagos, Nigeria",
         dpo: "Data Protection Officer: dpo@delacruzinnovation.com"
       }
     }

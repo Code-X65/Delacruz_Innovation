@@ -11,77 +11,85 @@ const FAQ = () => {
         {/* Question 1 */}
         <div className="mb-10 border-l-4 border-purple-700 pl-6 py-4">
           <h2 className="text-2xl font-semibold text-purple-700 mb-4">
-            What is Delacruz Innovation main publications?
+            What industries do you serve?
           </h2>
           <p className="text-gray-300 mb-4 leading-relaxed">
-            Delacruz Innovation primarily publishes articles, whitepapers, and case studies focused on technology innovation, business transformation, and industry trends.
+            We serve a wide range of sectors across Nigeria and internationally, including finance & banking, education & training, public sector (government agencies), SMEs, and technology platforms. Whether you’re a Lagos‑based SME or a national public body, we tailor our digital transformation and platform services to your environment.
           </p>
-          <ul className="list-disc list-inside space-y-3 text-gray-300 ml-4">
-            <li>For more than 50 years, the Quarterly has set the agenda for top managers globally. It includes articles, video, audio, and other content from McKinsey consultants and external experts. For more information, please visit McKinsey Quarterly.</li>
-            <li>The McKinsey Global Institute (MGI) is our business and economics research arm. Established in 1990, MGI provides leaders in the commercial, public, and social sectors with facts and insights. For more information, please visit MGI.</li>
-          </ul>
+
         </div>
 
         {/* Question 2 */}
         <div className="mb-10 border-l-4 border-purple-700 pl-6 py-4">
           <h2 className="text-2xl font-semibold text-purple-700 mb-4">
-            Can I reprint or distribute Delacruz Innovation publications?
+             Are your solutions suitable for Nigerian business conditions (power, connectivity, regulation)?
           </h2>
           <p className="text-gray-300 leading-relaxed space-y-4">
-            Yes, Delacruz Innovation allows reprinting and distribution of its publications under certain conditions. Please refer to the specific publication's reprint policy for details.
-            <br /><br />
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt dolor magnam tenetur cumque odio nemo sapiente culpa similique debitis in eligendi laborum, ipsum corporis provident ipsa earum aliquam porro repellendus.
-            <br /><br />
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error, sunt!
+           Yes. Our solutions are engineered with the Nigerian context in mind — from hybrid cloud architectures and mobile‑first interfaces to compliance with Nigerian regulatory frameworks. We factor in local infrastructure, regulatory requirements and user‑behaviour so your systems are robust, relevant and ready for growth.
+            
           </p>
         </div>
 
         {/* Question 3 */}
         <div className="mb-10 border-l-4 border-purple-700 pl-6 py-4">
           <h2 className="text-2xl font-semibold text-purple-700 mb-4">
-            How do I obtain permission to republish an article or an excerpted exhibit?
+           How long does a typical project take?
           </h2>
           <p className="text-gray-300 mb-4 leading-relaxed">
-            McKinsey allows select publications to republish our articles and exhibits, subject to approval. To request permission to republish an article or exhibit, online or in print, please write to reprints@mckinsey.com with the following information:
+             Each project is unique, but as a rule of thumb: a smaller scale CRM or workflow automation project may complete within 8‑12 weeks; a full‑scale SaaS/PaaS development or digital transformation initiative may span 4‑6+ months depending on scope. We always define milestones, deliverables and timelines during the project planning phase.
           </p>
-          <ul className="list-disc list-inside space-y-2 text-gray-300 ml-4 mb-4">
-            <li>Your name and contact information</li>
-            <li>The title and publication date of the article or exhibit</li>
-            <li>A description of how you plan to use the material</li>
-            <li>Any additional information that may be helpful in processing your request</li>
-          </ul>
-          <p className="text-gray-300 leading-relaxed">
-            Please note that our reprint licensing policy does not permit altering articles in any way, translating them into other languages, or creating edited excerpts or summaries. We allow select publications to excerpt our exhibits, subject to approval.
-            <br /><br />
-            We ask that our content be used only for educational, informational, or editorial purposes. We do not authorize the use of our content for sales, marketing, business, or promotional purposes.
-            <br /><br />
-            Please allow two to four weeks for us to review and reply to your request.
-          </p>
+       
         </div>
 
         {/* Question 4 */}
         <div className="mb-10 border-l-4 border-purple-700 pl-6 py-4">
           <h2 className="text-2xl font-semibold text-purple-700 mb-4">
-            How do I contact Delacruz Innovation for further inquiries?
+           How do you ensure user adoption and minimise disruption?
           </h2>
           <p className="text-gray-300 leading-relaxed">
-            The McKinsey Insights app provides mobile access to our publications, including McKinsey Quarterly, McKinsey Global Institute reports, and articles from across our industry, capabilities, and practices.
-            <br /><br />
-            The app is available for iPhone, iPad, and Android devices. Learn more here or install the app directly from the Apple App Store or the Google Play store.
-            <br /><br />
-            For further inquiries, you can contact Delacruz Innovation through our website's contact form or reach out to us via email at
+           Adoption is at the heart of our methodology. We engage stakeholders from day one, provide tailored training and change‑management support, and ensure your people are empowered to use the new systems confidently. We also deliver migration artefacts, pilot phases and continuous support to minimise disruption to daily operations.
           </p>
         </div>
 
         {/* Question 5 */}
         <div className="mb-10 border-l-4 border-purple-700 pl-6 py-4">
           <h2 className="text-2xl font-semibold text-purple-700 mb-4">
-            Does McKinsey accept article submissions?
+            What kind of support do you provide after implementation?
           </h2>
           <p className="text-gray-300 leading-relaxed">
-            While the majority of our articles are written by McKinsey consultants and alumni, we do accept submissions from external thought leaders and practitioners. The bar is the same for all authors: we look for thinking that is novel, useful, and rigorously substantiated. For external contributors, we also attach weight to work that sheds light on topics that are a priority for our firm and to submissions from recognized leaders in their field.
-            <br /><br />
-            To explore whether McKinsey might be interested in publishing your work, please contact McKinsey Publishing. We review both drafts and proposals. If your submission holds promise, we will be in touch to discuss the content and clarify our editorial process.
+           Our relationship doesn’t end at “go‑live”. We provide ongoing support and maintenance packages, training refreshers, performance reviews and optimisation sprints to ensure your systems continue to deliver value well beyond the initial launch. We also monitor for system health, analytics and improvement opportunities.
+          </p>
+        </div>
+        {/* Question 6 */}
+        <div className="mb-10 border-l-4 border-purple-700 pl-6 py-4">
+          <h2 className="text-2xl font-semibold text-purple-700 mb-4">
+            Are your services compliant with Nigerian data and privacy laws?
+          </h2>
+          <p className="text-gray-300 leading-relaxed">
+          Absolutely. We ensure compliance with the Nigeria Data Protection Commission (NDPC) frameworks including the Nigeria Data Protection Act 2023 and relevant directives. We also support international compliance when working with global clients and cross‑border data flows. 
+ndpc.gov.ng
++2
+doa-law.com
++2
+          </p>
+        </div>
+        {/* Question 7 */}
+        <div className="mb-10 border-l-4 border-purple-700 pl-6 py-4">
+          <h2 className="text-2xl font-semibold text-purple-700 mb-4">
+           What is the first step if we want to engage you?
+          </h2>
+          <p className="text-gray-300 leading-relaxed">
+          Simply contact us for a free discovery call. We’ll review your current state, identify priority challenges, suggest an approach and quote the estimated scope. There’s no obligation — just real insight to help you decide your next step.
+          </p>
+        </div>
+        {/* Question 8 */}
+        <div className="mb-10 border-l-4 border-purple-700 pl-6 py-4">
+          <h2 className="text-2xl font-semibold text-purple-700 mb-4">
+            Can you work with organisations outside Lagos or Nigeria?
+          </h2>
+          <p className="text-gray-300 leading-relaxed">
+            <span className='font-bold text-lg'>Yes</span>
+             <br /><br /> We design solutions for clients across Nigeria and internationally. Whether you’re operating in Abuja, Kaduna, London or New York, our cross‑border experience enables us to deliver effectively, collaborate virtually and accommodate multi‑region teams and stakeholders.
           </p>
         </div>
       </div>

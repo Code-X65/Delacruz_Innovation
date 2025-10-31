@@ -1,78 +1,86 @@
 export const jobsData = [
-  // ... move the entire jobsData array (lines 8-72) here
-    {
-    id: 15178,
-    title: "Associate",
-    company: "Delacruz Innovation",
-    type: "Consulting",
-    locations: ["Abu Dhabi", "Addis Ababa", "Almaty", "Amsterdam", "Astana", "Athens", "Atlanta"],
-    description: "Do you want to work on complex and pressing challenges—the kind that bring together curious, ambitious, and determined leaders who strive to become better every day?",
-    impact: "As an associate, you will join a client service team and take ownership of a workstream to solve some of the toughest challenges our clients face.",
-    impactDetails: "And these aren't just any clients—they're some of the most influential organizations around, from Fortune 500 giants to innovative startups.",
+  {
+    id: 1,
+    title: "Business Operations Manager",
+    company: "Delacruz Innovations",
+    type: "Full-Time",
+    locations: ["Lagos, Nigeria", "Hybrid"],
+    description:
+      "Oversee the daily operations of Delacruz Innovations, ensuring that projects, resources, and processes run smoothly and efficiently. Play a key role in enabling teams to deliver high-quality solutions across Nigeria.",
+    impact:
+      "Drive operational excellence by aligning internal processes and enabling business scalability.",
     responsibilities: [
-      "Working with clients and other McKinsey colleagues",
-      "Conducting research, analyzing data, interviews, and brainstorming",
-      "Collaborating directly with clients",
-      "Solving complex problems and refining strategies",
-      "Implementing transformations"
+      "Streamline internal processes and workflows for operational efficiency",
+      "Collaborate with department heads to ensure strategic alignment",
+      "Monitor performance metrics and generate actionable insights",
+      "Manage budgets, vendors, and resource allocation",
+      "Support business growth initiatives and operational scalability"
     ],
-    growth: "Driving lasting impact and building long-term capabilities with our clients is not easy work. We seek people who thrive in a high performance/high-reward culture.",
     qualifications: [
-      "Typically an advanced graduate degree (e.g., MBA, PhD, etc.) or equivalent work experience",
-      "Requirements may vary by country or practice"
+      "Minimum 5 years’ experience in business operations, preferably in IT or consulting",
+      "Strong analytical, leadership, and organisational skills",
+      "Proficient in project management and workflow optimisation tools",
+      "Excellent communication and stakeholder management skills",
+      "Knowledge of Nigerian business environment and regulatory compliance"
     ],
-    industries: ["Agriculture & Farming"],
-    capabilities: ["Operations Organizational Structure"],
-    hrEmail: "info@delacuzinnovation@gmail.com"
+    growth:
+      "An opportunity to shape how a fast-growing digital consultancy operates and scales across Africa.",
+    hrEmail: "careers@delacruzinnovations.com"
   },
   {
-    id: 10234,
-    title: "Business Operations Manager, Dubai",
-    company: "Defence Innovations",
-    type: "Internal",
-    locations: ["Abu Dhabi", "Addis Ababa", "Almaty", "Amsterdam", "Astana", "Athens"],
-    description: "As a Business Operations Manager at Defence Innovations, we are a private dynamic operations team and take ownership of critical business processes.",
-    impact: "Lead operational excellence initiatives across multiple departments.",
-    impactDetails: "You will work with senior leadership to streamline processes, implement new systems, and drive organizational efficiency.",
-    responsibilities: [
-      "Managing business operations",
-      "Process optimization",
-      "Strategic planning",
-      "Cross-functional collaboration"
-    ],
-    growth: "Opportunity to shape the operational framework of a growing organization.",
-    qualifications: [
-      "Bachelor's degree in Business Administration or related field",
-      "5+ years of operations management experience",
-      "Strong analytical and problem-solving skills"
-    ],
-    industries: ["Defense & Security"],
-    capabilities: ["Operations Management", "Strategic Planning"],
-    hrEmail: "careers@defenceinnovations.com"
-  },
-  {
-    id: 10567,
+    id: 2,
     title: "Project Manager",
-    company: "Global Consulting",
-    type: "Consulting",
-    locations: ["Abu Dhabi", "Addis Ababa", "Almaty"],
-    description: "As a Project Manager, you will have ownership of end-to-end project delivery – leading cross-functional teams to plan, execute, and deliver transformative solutions.",
-    impact: "Drive successful project delivery for Fortune 500 clients.",
-    impactDetails: "Lead teams of 10-15 professionals across multiple workstreams.",
+    company: "Delacruz Innovations",
+    type: "Contract / Full-Time",
+    locations: ["Remote", "Lagos, Nigeria"],
+    description:
+      "Lead digital transformation, SaaS/PaaS development, and consulting projects for clients. Ensure projects are delivered on time, within scope, and to the highest standards.",
+    impact:
+      "Deliver transformative digital projects that impact clients’ efficiency and innovation.",
     responsibilities: [
-      "Project planning and execution",
-      "Stakeholder management",
-      "Risk management",
-      "Team leadership"
+      "Plan, execute, and close projects according to deadlines and budgets",
+      "Coordinate cross-functional teams across multiple locations",
+      "Track project performance, risks, and milestones using PM tools",
+      "Communicate effectively with clients and internal teams",
+      "Ensure adherence to GDS and NDPC standards where applicable"
     ],
-    growth: "Fast-track career progression to senior leadership roles.",
     qualifications: [
-      "PMP or equivalent certification preferred",
-      "7+ years of project management experience",
-      "Experience with Agile and Waterfall methodologies"
+      "Proven experience managing IT or digital projects in Nigeria or internationally",
+      "Familiarity with Agile, Scrum, and Waterfall methodologies",
+      "Excellent problem-solving, negotiation, and leadership skills",
+      "Strong documentation and reporting capabilities",
+      "PMP, PRINCE2, or equivalent certification preferred"
     ],
-    industries: ["Technology", "Finance"],
-    capabilities: ["Project Management", "Agile Delivery"],
-    hrEmail: "jobs@globalconsulting.com"
+    growth:
+      "Fast-track opportunity to lead regional and international projects within a global digital consultancy.",
+    hrEmail: "projects@delacruzinnovations.com"
+  },
+  {
+    id: 3,
+    title: "Virtual Assistant",
+    company: "Delacruz Innovations",
+    type: "Part-Time / Full-Time",
+    locations: ["Remote (Nigeria)"],
+    description:
+      "Support the executive team with daily operations, scheduling, and client communications. Work closely with senior consultants and gain exposure to high-impact digital projects.",
+    impact:
+      "Enable seamless operations and efficient executive support across multiple time zones.",
+    responsibilities: [
+      "Manage calendar, appointments, and travel arrangements",
+      "Prepare reports, presentations, and correspondence",
+      "Liaise with clients and internal teams efficiently",
+      "Assist in research, data entry, and documentation",
+      "Ensure smooth communication across time zones"
+    ],
+    qualifications: [
+      "Minimum 2 years of administrative or virtual assistant experience",
+      "Excellent written and verbal communication skills",
+      "Highly organised, detail-oriented, and proactive",
+      "Proficient with Google Workspace, Microsoft Office, and project tools",
+      "Ability to work independently with minimal supervision"
+    ],
+    growth:
+      "A great entry point to work with industry experts and grow into higher operational or project roles.",
+    hrEmail: "hr@delacruzinnovations.com"
   }
 ];

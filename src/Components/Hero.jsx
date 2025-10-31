@@ -19,12 +19,10 @@ const Hero = () => {
 
   // Text rotation phrases
   const phrases = [
-    'Hello...',
     'Ready to innovate?',
     'What\'s your next brilliant move?',
-    'Transform your digital future',
-    'Build something extraordinary',
-    'Scale your technology vision'
+    'Transform your digital future...',
+
   ];
 
   useEffect(() => {
@@ -128,10 +126,7 @@ const Hero = () => {
                   : 'opacity-0 -translate-y-10'
               }`}
             >
-              Partner with{' '}
-              <span className="text-purple-400 font-semibold">Delacruz</span>
-              {' '}to revolutionize your IT infrastructure. We deliver cutting-edge solutions 
-              that drive innovation, enhance security, and accelerate your digital transformation journey.
+             Empowering Nigerian businesses through smart digital systems, automation, and enterprise-grade technology.
             </p>
 
             {/* CTA Button with Delayed Animation */}
@@ -146,7 +141,7 @@ const Hero = () => {
                 {/* Button Background Animation */}
                 <span className="absolute inset-0 bg-purple-800 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
                 
-                <span className="relative z-10">Book a Consultation</span>
+                <span className="relative z-10">Get A Free 30 min Discovery Call</span>
                 
                 <ArrowRight className="relative z-10 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform duration-300" />
                 
@@ -162,9 +157,9 @@ const Hero = () => {
               }`}
             >
               {[
-                { number: '500+', label: 'Projects Delivered' },
-                { number: '98%', label: 'Client Satisfaction' },
-                { number: '50+', label: 'Expert Consultants' },
+                { number: '36+', label: 'Projects Delivered' },
+                { number: '91%', label: 'Client Satisfaction' },
+                { number: '11+', label: 'Expert Consultants' },
                 { number: '15+', label: 'Years Experience' }
               ].map((stat, index) => (
                 <div

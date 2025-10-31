@@ -13,9 +13,9 @@ const HelpOurClient = () => {
   const services = [
     {
       icon: <Globe className="w-12 h-12" />,
-      title: 'Technology & IT Services',
+      title: 'Digital Transformation & Process Automation – Streamline operations, cut waste, and boost productivity.',
       description:
-        'Empower your business with scalable, secure, and efficient IT infrastructure and digital solutions tailored to modern enterprises.',
+        'Streamline operations, cut waste, and boost productivity.From manual chaos to digital clarity — we design smarter systems that help your business move faster, stronger, and smarter',
       image:
         'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&auto=format&fit=crop',
       gradient: 'from-[#4a90b8] to-[#6bb3d8]',
@@ -24,7 +24,7 @@ const HelpOurClient = () => {
     },
     {
       icon: <Database className="w-12 h-12" />,
-      title: 'Cybersecurity Consultation',
+      title: 'SaaS / PaaS Development – Tailored platforms built for Nigerian markets.',
       description:
         'Protect your digital assets and data integrity with advanced security frameworks and proactive threat management.',
       image:
@@ -35,7 +35,7 @@ const HelpOurClient = () => {
     },
     {
       icon: <Database className="w-12 h-12" />,
-      title: 'Cybersecurity Consultation',
+      title: 'IT Consulting & Change Management – Strategy, migration, and user adoption that stick.',
       description:
         'Protect your digital assets and data integrity with advanced security frameworks and proactive threat management.',
       image:
@@ -62,7 +62,7 @@ const HelpOurClient = () => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
         }`}>
           <p className="text-[#6bb3d8] text-sm font-semibold tracking-widest uppercase mb-3">
-            How We Help Clients
+            Services Highlights
           </p>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
             Let's turn your biggest opportunities

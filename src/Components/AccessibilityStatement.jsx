@@ -1,81 +1,71 @@
 import React from 'react'
 
 const AccessibilityStatement = () => {
-  const sections = [
-    {
-      title: "Our Commitment",
-      content: "Delacruz Innovation is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards to ensure we provide equal access to all of our users."
-    },
-    {
-      title: "Conformance Status",
-      content: "The Web Content Accessibility Guidelines (WCAG) defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA. Delacruz Innovation is partially conformant with WCAG 2.1 level AA. Partially conformant means that some parts of the content do not fully conform to the accessibility standard."
-    },
-    {
-      title: "Accessibility Features",
-      content: "Our website includes the following accessibility features:",
-      list: [
-        "Alternative text for images and visual content",
-        "Keyboard navigation support throughout the site",
-        "Clear and consistent navigation structure",
-        "Sufficient color contrast between text and background",
-        "Resizable text without loss of functionality",
-        "Clear focus indicators for interactive elements",
-        "Descriptive link text and headings",
-        "Compatible with screen readers and assistive technologies"
-      ]
-    },
-    {
-      title: "Known Limitations",
-      content: "Despite our best efforts to ensure accessibility of Delacruz Innovation, there may be some limitations. Below are known issues we are working to resolve:",
-      list: [
-        "Some PDF documents may not be fully accessible",
-        "Third-party embedded content may not meet accessibility standards",
-        "Some legacy content may not be fully optimized for screen readers",
-        "Video content may have limited closed captioning in some cases"
-      ]
-    },
-    {
-      title: "Assistive Technologies",
-      content: "Our website is designed to be compatible with the following assistive technologies:",
-      list: [
-        "Screen readers (JAWS, NVDA, VoiceOver)",
-        "Screen magnification software",
-        "Speech recognition software",
-        "Keyboard-only navigation",
-        "Alternative input devices"
-      ]
-    },
-    {
-      title: "Feedback and Contact Information",
-      content: "We welcome your feedback on the accessibility of Delacruz Innovation. Please let us know if you encounter accessibility barriers on our website or have suggestions for improvement.",
-      contact: {
-        email: "accessibility@delacruzinnovation.com",
-        phone: "+1 (555) 123-4567",
-        address: "Delacruz Innovation, 123 Innovation Drive, New York, NY 10001"
-      }
-    },
-    {
-      title: "Continuous Improvement",
-      content: "We are committed to continually improving our website's accessibility. Our ongoing efforts include:",
-      list: [
-        "Regular accessibility audits and testing",
-        "Training our content creators on accessibility best practices",
-        "Incorporating accessibility from the earliest design phases",
-        "Monitoring and addressing user-reported accessibility issues",
-        "Staying updated with the latest accessibility guidelines and standards"
-      ]
-    },
-    {
-      title: "Technical Specifications",
-      content: "Accessibility of Delacruz Innovation relies on the following technologies to work with the particular combination of web browser and any assistive technologies or plugins installed on your computer:",
-      list: [
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "WAI-ARIA (Accessible Rich Internet Applications)"
-      ]
+const sections = [
+  {
+    title: "Our Commitment",
+    content:
+      "Delacruz Innovations is committed to ensuring that our digital services are accessible to everyone, including people with disabilities. We aim to provide a user experience that is inclusive, clear, and easy to navigate for all clients, partners, and visitors."
+  },
+  {
+    title: "Commitment to Accessibility",
+    content:
+      "We strive to make our website, platforms, and digital content accessible in accordance with best practices and industry standards. Our accessibility efforts align with:",
+    list: [
+      "WCAG 2.1 Level AA guidelines",
+      "Nigerian and international accessibility standards",
+      "Inclusive design principles to ensure usability for people with visual, auditory, motor, or cognitive impairments"
+    ]
+  },
+  {
+    title: "Measures to Support Accessibility",
+    content: "To improve accessibility across our digital platforms, we have implemented the following measures:",
+    list: [
+      "Semantic HTML and ARIA labels for navigation and interactive elements",
+      "Keyboard navigability for forms, menus, and links",
+      "Readable font sizes and high-contrast colour schemes",
+      "Alt text for all images to support screen readers",
+      "Responsive design for mobile, tablet, and desktop access",
+      "Clear headings, labels, and instructions throughout forms and workflows"
+    ]
+  },
+  {
+    title: "Limitations",
+    content:
+      "While we strive to meet accessibility standards, there may be some limitations that we are actively working to resolve:",
+    list: [
+      "Some third-party content or embedded platforms may not fully conform",
+      "PDF or downloadable content may not be fully accessible without assistive software",
+      "Certain dynamic or interactive features may have limitations on some devices"
+    ]
+  },
+  {
+    title: "Feedback and Contact Information",
+    content:
+      "We welcome your feedback on the accessibility of Delacruz Innovations. If you encounter any accessibility barriers or have suggestions for improvement, please contact us:",
+    contact: {
+      email: "accessibility@delacruzinnovations.com",
+      phone: "+44 (0)7342274470 (UK) | +234 9052765358 (NG)",
+      address: "29A Salimonu Ayinde Street, Lagos, Nigeria"
     }
-  ]
+  },
+  {
+    title: "Alternatives",
+    content:
+      "If you are unable to access certain information or functionalities on our website, we can provide the following alternatives:",
+    list: [
+      "Accessible document formats (Word, accessible PDF)",
+      "Direct support via phone or email",
+      "Assistance in submitting inquiries or requests"
+    ]
+  },
+  {
+    title: "Continuous Improvement",
+    content:
+      "Delacruz Innovations regularly audits its digital services for accessibility compliance and updates its practices to align with the latest standards and technologies. We remain committed to creating an inclusive environment where all users, regardless of ability, can engage with our services confidently and effectively."
+  }
+];
+
 
   return (
     <div className="min-h-screen bg-black text-white">

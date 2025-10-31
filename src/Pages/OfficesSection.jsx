@@ -37,9 +37,9 @@ const OfficesSection = () => {
           cities: [
             {
               name: "Lagos",
-              address: "XXXXXXXX",
+              address: "Address - 29A, Salimonu Ayinde Street. Lagos",
               city: "Lagos, Nigeria",
-              phone: "+234XXXXXXX"
+              phone: "+234 9052765358"
             }
           ]
         }

@@ -50,7 +50,7 @@ const ServiceDetailsPage = () => {
             {service.title}
           </h1>
           
-          <p className="text-gray-200 text-base sm:text-lg leading-relaxed max-w-4xl mb-6">
+          <p className="text-gray-200 text-base sm:text-sm leading-relaxed max-w-4xl mb-6">
             {service.tagline}
           </p>
           
@@ -59,7 +59,7 @@ const ServiceDetailsPage = () => {
           </p>
         </div>
 
-        {/* Licenses Section */}
+        {/* Licenses Section
         {service.licenses && (
           <div className={`mb-12 transition-all duration-1000 transform ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -78,7 +78,7 @@ const ServiceDetailsPage = () => {
               </div>
             </div>
           </div>
-        )}
+        )} */}
 
         {/* Key Deliverables Section */}
         <div className={`mb-16 transition-all duration-1000 transform ${
@@ -177,43 +177,6 @@ const ServiceDetailsPage = () => {
           </div>
         </div>
 
-        {/* Market Opportunity Section */}
-        {service.marketOpportunity && (
-          <div className={`mb-12 transition-all duration-1000 transform ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`} style={{ transitionDelay: '500ms' }}>
-            <div className="bg-gradient-to-r from-purple-700/20 to-purple-600/20 backdrop-blur-md rounded-2xl p-8 border border-purple-700/30">
-              <div className="flex flex-col lg:flex-row gap-8 items-start">
-                <div className="flex-shrink-0">
-                  <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl flex items-center justify-center shadow-xl">
-                    <TrendingUp className="w-10 h-10 text-white" />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                    Market Opportunity
-                    <span className="px-3 py-1 bg-purple-700 text-white text-xs font-semibold rounded-full">
-                      {service.marketOpportunity.region}
-                    </span>
-                  </h3>
-                  <p className="text-gray-200 leading-relaxed mb-6">
-                    {service.marketOpportunity.summary}
-                  </p>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    {service.marketOpportunity.highlights.map((highlight, index) => (
-                      <div key={index} className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-gray-200 text-sm">
-                          <span className="font-semibold text-white">{highlight.title}:</span> {highlight.description}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
 
         {/* CTA Banner */}
         <div className={`transition-all duration-1000 transform ${
@@ -229,7 +192,7 @@ const ServiceDetailsPage = () => {
                 Let's discuss how our {service.title.toLowerCase()} can drive your success
               </p>
               <Link to="/consultation_form" className="bg-white text-purple-700 hover:bg-gray-100 font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Schedule a Consultation
+                Schedule A Free Consultation
               </Link>
             </div>
             

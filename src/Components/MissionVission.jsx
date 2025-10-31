@@ -17,27 +17,16 @@ const MissionVisionValues = () => {
     setCurrentSlide((prev) => (prev - 1 + 3) % 3);
   };
 
-  const missionPoints = [
-    'Guide clients on their path to process excellence',
-    'Support digital transformation journeys with expertise',
-    'Deliver deep-rooted and sustainable enhancements',
-    'Maximize potential at every stage of growth'
-  ];
+  const missionText = 'To deliver reliable, scalable, and context-relevant digital systems for organisations in transition — from traditional operations to modern, automated ecosystems.';
 
-  const visionPoints = [
-    'Create an ecosystem for universal process excellence',
-    'Enable optimum efficiency and quality across industries',
-    'Drive exceptional customer satisfaction',
-    'Leverage cutting-edge technologies for performance enhancement'
-  ];
+  const visionText = 'A digitally empowered Africa where innovation drives inclusion, efficiency, and sustainable growth.';
 
   const valuePoints = [
-    'Innovation: Pioneering solutions that transform businesses',
-    'Integrity: Building trust through transparency and ethics',
-    'Excellence: Delivering quality in every engagement',
-    'Collaboration: Partnering for sustainable success',
-    'Agility: Adapting swiftly to evolving needs',
-    'Impact: Creating measurable, lasting value'
+    'Excellence: Every line of code, every consultation, every project — delivered to global standards.',
+    'Integrity: We believe trust is the foundation of every successful digital partnership.',
+    'Innovation: We never replicate; we rethink, reimagine, and rebuild better',
+    'Collaboration: We succeed together — with our clients, partners, and people.',
+    'Impact: Every solution we create must make life or work meaningfully better.',
   ];
 
   const sections = [
@@ -46,7 +35,8 @@ const MissionVisionValues = () => {
       title: 'Our Mission',
       gradient: 'from-purple-700 to-purple-600',
       borderColor: 'border-purple-700/30 hover:border-purple-600/50',
-      points: missionPoints,
+      content: missionText,
+      isList: false,
       checkColor: 'text-purple-500'
     },
     {
@@ -54,15 +44,17 @@ const MissionVisionValues = () => {
       title: 'Our Vision',
       gradient: 'from-purple-600 to-purple-500',
       borderColor: 'border-purple-600/30 hover:border-purple-500/50',
-      points: visionPoints,
+      content: visionText,
+      isList: false,
       checkColor: 'text-purple-400'
     },
     {
       icon: Award,
-      title: 'Our Values',
+      title: 'Our Core Values',
       gradient: 'from-purple-700 to-purple-800',
       borderColor: 'border-purple-700/30 hover:border-purple-600/50',
-      points: valuePoints,
+      content: valuePoints,
+      isList: true,
       checkColor: 'text-purple-500'
     }
   ];
@@ -93,14 +85,19 @@ const MissionVisionValues = () => {
                       <h2 className="text-3xl font-bold text-white ml-4">{section.title}</h2>
                     </div>
                     <div className={`h-1 w-20 bg-gradient-to-r ${section.gradient} mb-6`}></div>
-                    <div className="space-y-3">
-                      {section.points.map((point, idx) => (
-                        <div key={idx} className="flex items-start space-x-3">
-                          <CheckCircle2 className={`w-5 h-5 ${section.checkColor} flex-shrink-0 mt-1`} />
-                          <p className="text-gray-300 leading-relaxed">{point}</p>
-                        </div>
-                      ))}
-                    </div>
+                    
+                    {section.isList ? (
+                      <div className="space-y-3">
+                        {section.content.map((point, idx) => (
+                          <div key={idx} className="flex items-start space-x-3">
+                            <CheckCircle2 className={`w-5 h-5 ${section.checkColor} flex-shrink-0 mt-1`} />
+                            <p className="text-gray-300 leading-relaxed">{point}</p>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-gray-300 text-lg leading-relaxed">{section.content}</p>
+                    )}
                   </div>
                 </div>
               );
@@ -141,86 +138,73 @@ const MissionVisionValues = () => {
           </div>
         </div>
 
-        {/* Desktop Flex Container */}
-        <div className="hidden lg:flex gap-6">
+        {/* Desktop Layout */}
+        <div className="hidden lg:block space-y-6">
           
-          {/* Mission Section */}
-          <div 
-            className={`flex-1 transition-all duration-1000 transform ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-            }`}
-          >
-            <div className="bg-gradient-to-br from-purple-950/50 to-black border border-purple-700/30 rounded-2xl p-8 h-full hover:border-purple-600/50 transition-all duration-300">
-              <div className="flex items-center mb-6">
-                <div className="w-14 h-14 bg-gradient-to-br from-purple-700 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Target className="w-7 h-7 text-white" />
-                </div>
-                <h2 className="text-3xl font-bold text-white ml-4">Our Mission</h2>
-              </div>
-              <div className="h-1 w-20 bg-gradient-to-r from-purple-700 to-purple-600 mb-6"></div>
-              <div className="space-y-3">
-                {missionPoints.map((point, index) => (
-                  <div 
-                    key={index}
-                    className="flex items-start space-x-3"
-                  >
-                    <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-1" />
-                    <p className="text-gray-300 leading-relaxed">
-                      {point}
-                    </p>
+          {/* Mission and Vision Side by Side */}
+          <div className="flex gap-6">
+            
+            {/* Mission Section */}
+            <div 
+              className={`flex-1 transition-all duration-1000 transform ${
+                isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+              }`}
+            >
+              <div className="bg-gradient-to-br from-purple-950/50 to-black border border-purple-700/30 rounded-2xl p-8 h-full hover:border-purple-600/50 transition-all duration-300">
+                <div className="flex items-center mb-6">
+                  <div className="w-14 h-14 bg-gradient-to-br from-purple-700 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Target className="w-7 h-7 text-white" />
                   </div>
-                ))}
+                  <h2 className="text-3xl font-bold text-white ml-4">Our Mission</h2>
+                </div>
+                <div className="h-1 w-20 bg-gradient-to-r from-purple-700 to-purple-600 mb-6"></div>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  {missionText}
+                </p>
               </div>
             </div>
-          </div>
 
-          {/* Vision Section */}
-          <div 
-            className={`flex-1 transition-all duration-1000 transform ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-            }`}
-            style={{ transitionDelay: '200ms' }}
-          >
-            <div className="bg-gradient-to-br from-purple-950/50 to-black border border-purple-600/30 rounded-2xl p-8 h-full hover:border-purple-500/50 transition-all duration-300">
-              <div className="flex items-center mb-6">
-                <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Eye className="w-7 h-7 text-white" />
-                </div>
-                <h2 className="text-3xl font-bold text-white ml-4">Our Vision</h2>
-              </div>
-              <div className="h-1 w-20 bg-gradient-to-r from-purple-600 to-purple-500 mb-6"></div>
-              <div className="space-y-3">
-                {visionPoints.map((point, index) => (
-                  <div 
-                    key={index}
-                    className="flex items-start space-x-3"
-                  >
-                    <CheckCircle2 className="w-5 h-5 text-purple-400 flex-shrink-0 mt-1" />
-                    <p className="text-gray-300 leading-relaxed">
-                      {point}
-                    </p>
+            {/* Vision Section */}
+            <div 
+              className={`flex-1 transition-all duration-1000 transform ${
+                isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+              }`}
+              style={{ transitionDelay: '200ms' }}
+            >
+              <div className="bg-gradient-to-br from-purple-950/50 to-black border border-purple-600/30 rounded-2xl p-8 h-full hover:border-purple-500/50 transition-all duration-300">
+                <div className="flex items-center mb-6">
+                  <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Eye className="w-7 h-7 text-white" />
                   </div>
-                ))}
+                  <h2 className="text-3xl font-bold text-white ml-4">Our Vision</h2>
+                </div>
+                <div className="h-1 w-20 bg-gradient-to-r from-purple-600 to-purple-500 mb-6"></div>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  {visionText}
+                </p>
               </div>
             </div>
+
           </div>
 
-          {/* Values Section */}
+          {/* Values Section - Full Width Below */}
+          <div className="flex gap-4">
+
           <div 
-            className={`flex-1 transition-all duration-1000 transform ${
+            className={`transition-all duration-1000 transform flex-1 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
             }`}
             style={{ transitionDelay: '400ms' }}
           >
-            <div className="bg-gradient-to-br from-purple-950/50 to-black border border-purple-700/30 rounded-2xl p-8 h-full hover:border-purple-600/50 transition-all duration-300">
+            <div className="bg-gradient-to-br from-purple-950/50 to-black border border-purple-700/30 rounded-2xl p-8 hover:border-purple-600/50 transition-all duration-300">
               <div className="flex items-center mb-6">
                 <div className="w-14 h-14 bg-gradient-to-br from-purple-700 to-purple-800 rounded-xl flex items-center justify-center flex-shrink-0">
                   <Award className="w-7 h-7 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold text-white ml-4">Our Values</h2>
+                <h2 className="text-3xl font-bold text-white ml-4">Our Core Values</h2>
               </div>
               <div className="h-1 w-20 bg-gradient-to-r from-purple-700 to-purple-800 mb-6"></div>
-              <div className="space-y-3">
+              <div className="grid grid-cols-1  gap-4">
                 {valuePoints.map((point, index) => (
                   <div 
                     key={index}
@@ -234,6 +218,40 @@ const MissionVisionValues = () => {
                 ))}
               </div>
             </div>
+          </div>
+           <div 
+            className={`transition-all duration-1000 flex-1 transform ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+            }`}
+            style={{ transitionDelay: '400ms' }}
+          >
+            <div className="bg-gradient-to-br from-purple-950/50 to-black border border-purple-700/30 rounded-2xl p-8 hover:border-purple-600/50 transition-all duration-300">
+              <div className="flex items-center mb-6">
+                <div className="w-14 h-14 bg-gradient-to-br from-purple-700 to-purple-800 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Award className="w-7 h-7 text-white" />
+                </div>
+                <h2 className="text-3xl font-bold text-white ml-4">Our Ambimtion</h2>
+              </div>
+              <div className="h-1 w-20 bg-gradient-to-r from-purple-700 to-purple-800 mb-6"></div>
+                           <div className="grid grid-cols-1  gap-4">
+                <p className="text-gray-300 text-lg leading-relaxed mb-4">
+                  Delacruz Innovations is not here to compete. We are here to set a new standard. Our goal is clear:
+                </p>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-1" />
+                  <p className="text-gray-300 leading-relaxed">
+                    To become one of Nigeria's top IT consultancy firms in Nigeria.
+                  </p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle2 className="w-5 h-5 text-purple-500 flex-shrink-0 mt-1" />
+                  <p className="text-gray-300 leading-relaxed">
+                    To be recognised for our innovation, delivery excellence, and social impact.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
           </div>
 
         </div>

@@ -7,6 +7,7 @@ import HelpOurClient from '../Components/HelpOurClient'
 import Careers from '../Components/Careers'
 import SocialImapact from '../Components/SocialImpact'
 import CTABanner from '../Components/CTABanner'
+import Chatbot from '../Components/Chatbot'
 
 const Homepage = () => {
   return (
@@ -20,6 +21,7 @@ const Homepage = () => {
         <Careers />
         {/* <SocialImapact /> */}
         <CTABanner />
+        <Chatbot />
     </div>
     </>
   )

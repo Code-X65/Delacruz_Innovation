@@ -3,113 +3,217 @@ import { Link } from 'react-router-dom';
 
 // JSON Data
 const caseStudiesData = {
-  title: "Case Studies",
-  subtitle: "Real results from real clients. See how we've helped businesses transform and grow.",
+  title: "Case Studies ",
+  subtitle: "Real results from real clients. See how we helped organisations transform their operations, modernise digital systems, and improve business performance.",
   cases: [
     {
       id: 1,
-      tags: ["Data Strategy", "Digital Solutions", "Analytics"],
-      title: "National Digital Health Transformation — 111 Emergency Online Program",
-      client: "NHS England, UK Health Security Agency",
+      tags: ["Digital Transformation", "Process Optimisation", "Public Sector"],
+      title: "Department for Business & Trade – Digital Transformation",
+      client: "UK Government / Public Sector",
       challenge: {
         title: "The Challenge",
-        description: "The platform's performance and accessibility required significant improvement to meet modern healthcare and user experience standards."
+        description:
+          "The department was undergoing a large-scale migration from DataHub to the GOV.UK backend, with multiple legacy systems and cross-border teams handling highly sensitive data. Processes were inconsistent, and stakeholders were frustrated by misaligned operations."
       },
       solution: {
-        title: "Our Solution",
-        description: "Optimised a range of features: Analytics to document requirements and system workflows. Partnered with clinical authors, product owners, and architects to increase application reliability, safety and accessibility standards. Led gap analysis and process re-engineering to enable faster triage and enhanced system reliability."
+        title: "Our Approach & Solution",
+        description:
+          "Led process mapping initiatives to understand workflows, identify gaps, and streamline operations. Worked closely with cross-functional, multi-region teams to gather and validate requirements in line with Government Digital Service (GDS) standards. Produced detailed migration artefacts to ensure seamless transitions with minimal disruption."
       },
       results: {
-        title: "The Results",
+        title: "The Impact",
         metrics: [
           {
-            icon: "📊",
-            value: "Reduced 40% manual data retrieval",
-            description: "Streamlined digital tools, adverts and accountability from application tickets for 2 million users"
+            icon: "✅",
+            value: "Improved Alignment",
+            description: "Reduced process inconsistencies and improved operational efficiency across regions."
           },
           {
-            icon: "👥",
-            value: "160K",
-            description: "Monthly calls"
+            icon: "🔒",
+            value: "Data Integrity",
+            description: "Ensured secure and accurate data migration while protecting sensitive information."
           },
           {
-            icon: "📈",
-            value: "4.5x",
-            description: "Growth"
+            icon: "⚙️",
+            value: "Future-Ready Framework",
+            description: "Delivered a foundation for scalable and efficient digital operations."
           }
         ]
+      },
+      testimonial: {
+        quote:
+          "Our ability to translate complex processes into actionable solutions was pivotal for our digital migration.",
+        author: "Senior Director, Department for Business & Trade"
       }
     },
     {
       id: 2,
-      tags: ["Data Strategy", "Digital Solutions", "Analytics"],
-      title: "Platform Integration & Data Modernisation —",
-      client: "Skybetting And Gaming (FlutterGroup), Leeds UK",
+      tags: ["CRM Modernisation", "Healthcare", "Process Re-engineering"],
+      title: "NHS England – Replatforming & CRM Modernisation",
+      client: "Healthcare / Public Sector",
       challenge: {
         title: "The Challenge",
-        description: "Multiple legacy systems and siloed data models created inefficiencies and slowed digital deployment cycles."
+        description:
+          "NHS 111 online was outdated, with duplicated workflows that caused frustration for call handlers and administrators. The CRM system was under-optimised, leading to inefficiencies in managing clinical data."
       },
       solution: {
-        title: "Our Solution",
-        description: "Streamlined cross-platform data exchange, improving operational efficiency. Reduced service downtime and accelerated time-to-market for new platforms. Improved regulatory compliance through structured governance and audit-ready documentation."
+        title: "Our Approach & Solution",
+        description:
+          "Acted as Lead Business Consultant to retool the online service and digitise the CRM. Collaborated with clinical authors, IT teams, and administrators to map workflows, identify friction points, and co-create practical, user-focused solutions."
       },
       results: {
-        title: "The Results",
+        title: "The Impact",
         metrics: [
           {
+            icon: "💻",
+            value: "Enhanced UX",
+            description: "Improved experience for call handlers and administrators."
+          },
+          {
             icon: "⚡",
-            value: "50%",
-            description: "Faster releases"
+            value: "Streamlined Workflows",
+            description: "Reduced processing errors and improved data accuracy."
           },
           {
-            icon: "🌍",
-            value: "3 Countries",
-            description: "Deployment"
-          },
-          {
-            icon: "💰",
-            value: "£2M",
-            description: "Cost savings"
+            icon: "💪",
+            value: "Empowered Teams",
+            description: "Increased confidence among staff using new digital tools."
           }
         ]
+      },
+      testimonial: {
+        quote:
+          "we really understands people as well as processes – the transformation wouldn’t have succeeded without his guidance.",
+        author: "Programme Manager, NHS England"
       }
     },
-       {
+    {
       id: 3,
-      tags: ["Brand Strategy", "Digital Solutions", "Analytics"],
-      title: "Workforce Management (WFM) Optimisation",
-      client: "Social Security Scotland - Glasgow, Scotland",
+      tags: ["Digital Retail", "Revenue Growth", "Personalisation"],
+      title: "easyJet – Digital Retail & Ancillary Revenue Growth",
+      client: "Aviation / Travel",
       challenge: {
         title: "The Challenge",
-        description: "Existing manual scheduling and reporting processes limited visibility and adaptability across multiple service centres."
+        description:
+          "easyJet needed to enhance personalization in digital retail to drive ancillary revenue. The challenge was aligning commercial strategy with IT systems and ensuring smooth adoption across teams."
       },
       solution: {
-        title: "Our Solution",
-        description: "Improved forecasting accuracy and workload transparency. Increased staff productivity and engagement through intelligent scheduling. Provided a scalable digital framework for future agency-wide implementation."
+        title: "Our Approach & Solution",
+        description:
+          "Led the business analysis workstream for Datalex Merchandiser implementation. Bridged the gap between commercial, IT, and vendor teams to align requirements, map customer behaviour, and optimise workflows for personalisation and efficiency."
       },
       results: {
-        title: "The Results",
+        title: "The Impact",
         metrics: [
           {
-            icon: "⚡",
-            value: "150%",
-            description: "Faster releases"
-          },
-          {
-            icon: "🌍",
-            value: "150%",
-            description: "Webiste Traffic"
-          },
-          {
             icon: "💰",
-            value: "4.5X",
-            description: "Cost savings"
+            value: "Revenue Growth",
+            description: "Increased ancillary revenue through personalised retail experiences."
+          },
+          {
+            icon: "🤝",
+            value: "Cross-Team Alignment",
+            description: "Improved collaboration between commercial and IT teams."
+          },
+          {
+            icon: "📊",
+            value: "Actionable Insights",
+            description: "Empowered teams with clearer data and measurable performance improvements."
           }
         ]
+      },
+      testimonial: {
+        quote:
+          "Our approach combined strategic insight with practical execution – the results were immediate and tangible.",
+        author: "Head of Digital Commerce, easyJet"
+      }
+    },
+    {
+      id: 4,
+      tags: ["CRM Optimisation", "Operational Efficiency", "Data Insights"],
+      title: "Sky Betting & Gaming – CRM & Operational Optimisation",
+      client: "Gambling / Technology",
+      challenge: {
+        title: "The Challenge",
+        description:
+          "Sky Betting & Gaming’s CRM and operational systems were fragmented, limiting visibility into customer behaviour and slowing decision-making."
+      },
+      solution: {
+        title: "Our Approach & Solution",
+        description:
+          "Served as Lead Business Consultant, reviewing existing CRM workflows, identifying gaps, and implementing optimisations. Collaborated with senior stakeholders to design scalable, measurable processes aligned with business objectives."
+      },
+      results: {
+        title: "The Impact",
+        metrics: [
+          {
+            icon: "📈",
+            value: "Efficiency Boost",
+            description: "Streamlined CRM processes for better customer lifecycle management."
+          },
+          {
+            icon: "🔍",
+            value: "Data-Driven Decisions",
+            description: "Enhanced analytics and insights to support strategic decisions."
+          },
+          {
+            icon: "⚙️",
+            value: "Operational Clarity",
+            description: "Increased efficiency and collaboration across departments."
+          }
+        ]
+      },
+      testimonial: {
+        quote:
+          "We brought clarity and focus to our complex CRM landscape – his work helped us turn insights into action.",
+        author: "Senior Stakeholder, Sky Betting & Gaming"
+      }
+    },
+    {
+      id: 5,
+      tags: ["Systems Consolidation", "Banking", "Process Improvement"],
+      title: "Lloyds Banking Group – Legacy Systems Consolidation",
+      client: "Banking / Financial Services",
+      challenge: {
+        title: "The Challenge",
+        description:
+          "The bank managed 26 legacy loan systems, resulting in slow processing times, fragmented customer experiences, and high maintenance costs."
+      },
+      solution: {
+        title: "Our Approach & Solution",
+        description:
+          "As Senior Business Consultant, led the analysis stream for the consolidation initiative. Mapped end-to-end loan processes, removed redundancies, and collaborated across departments to define a unified, efficient system supported by strong change management practices."
+      },
+      results: {
+        title: "The Impact",
+        metrics: [
+          {
+            icon: "⏱️",
+            value: "30%",
+            description: "Reduction in loan processing times."
+          },
+          {
+            icon: "😊",
+            value: "Customer Satisfaction",
+            description: "Improved client experience and faster service delivery."
+          },
+          {
+            icon: "💸",
+            value: "Cost Efficiency",
+            description: "Reduced operational and maintenance costs through system consolidation."
+          }
+        ]
+      },
+      testimonial: {
+        quote:
+          "we practical insight and hands-on approach ensured our transformation was smooth and successful.",
+        author: "Director, Lloyds Banking Group"
       }
     }
   ]
 };
+
 
 const CaseStudies = () => {
   const [visibleCards, setVisibleCards] = useState(new Set());

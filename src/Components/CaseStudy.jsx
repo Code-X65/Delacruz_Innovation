@@ -89,7 +89,7 @@ const Casestudy = () => {
             <div className={`transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-70'}`}>
               <button className="group relative inline-flex items-center gap-3 bg-black text-white px-8 py-4 md:px-6 md:py-3 rounded-lg font-semibold text-base md:text-lg shadow-lg hover:shadow-2xl hover:shadow-[#4a90b8]/50 transition-all duration-500 hover:scale-105 overflow-hidden">
                 <span className="absolute inset-0 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-                <span className="relative z-10">Book a free Consultation</span>
+                <span className="relative z-10">Learn More </span>
                 <ArrowRight className="relative z-10 w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform duration-300" />
                 <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></span>
               </button>
