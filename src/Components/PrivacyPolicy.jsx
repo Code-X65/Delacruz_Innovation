@@ -101,7 +101,7 @@ const PrivacyPolicy = () => {
       content: "If you have questions or would like to exercise your rights, please contact: Data Protection Officer (DPO)",
       contact: {
         email: "dpo@delacruzinnovations.com",
-        phone: " ‪+44 (0)7342274470‬ (UK) | ‪+234 9052765358‬ (NG)",
+        phone: " +44 (0)7342274470 (UK) | +234 9052765358 (NG)",
         address: "22 Fellery Street, Lagos, Nigeria",
         dpo: "Data Protection Officer: dpo@delacruzinnovation.com"
       }

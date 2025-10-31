@@ -188,7 +188,7 @@ const allQuestions = [
   "Who should I speak to about custom solutions?"
 ];
 
-const Chatbot = () => {
+const DeChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [messages, setMessages] = useState([
@@ -477,4 +477,4 @@ What would you like to know?`;
   );
 };
 
-export default Chatbot;
+export default DeChatbot;
