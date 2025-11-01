@@ -91,12 +91,12 @@ const caseStudiesData = {
     {
       id: 3,
       tags: ["Digital Retail", "Revenue Growth", "Personalisation"],
-      title: "easyJet – Digital Retail & Ancillary Revenue Growth",
+      title: "Easyjet – Digital Retail & Ancillary Revenue Growth",
       client: "Aviation / Travel",
       challenge: {
         title: "The Challenge",
         description:
-          "easyJet needed to enhance personalization in digital retail to drive ancillary revenue. The challenge was aligning commercial strategy with IT systems and ensuring smooth adoption across teams."
+          "Easyjet needed to enhance personalization in digital retail to drive ancillary revenue. The challenge was aligning commercial strategy with IT systems and ensuring smooth adoption across teams."
       },
       solution: {
         title: "Our Approach & Solution",

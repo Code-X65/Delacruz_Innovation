@@ -25,7 +25,7 @@ const OurHistory = () => {
         }`} style={{ transitionDelay: '200ms' }}>
           <div className="relative rounded-2xl overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&auto=format&fit=crop" 
+              src="https://images.unsplash.com/photo-1491841651911-c44c30c34548?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhpc3Rvcnl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=500" 
               alt="Team collaboration"
               className="w-full h-[400px] md:h-[500px] object-cover"
             />

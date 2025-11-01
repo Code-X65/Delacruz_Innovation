@@ -9,13 +9,13 @@ const MissionVisionValues = () => {
     setTimeout(() => setIsVisible(true), 100);
   }, []);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % 3);
-  };
+const nextSlide = () => {
+  setCurrentSlide((prev) => (prev + 1) % 4);
+};
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + 3) % 3);
-  };
+const prevSlide = () => {
+  setCurrentSlide((prev) => (prev - 1 + 4) % 4);
+};
 
   const missionText = 'To deliver reliable, scalable, and context-relevant digital systems for organisations in transition — from traditional operations to modern, automated ecosystems.';
 
@@ -28,36 +28,54 @@ const MissionVisionValues = () => {
     'Collaboration: We succeed together — with our clients, partners, and people.',
     'Impact: Every solution we create must make life or work meaningfully better.',
   ];
+ const Ambition = [
+  {
+    description: 'Delacruz Innovations is not here to compete. We are here to set a new standard. Our goal is clear:',
+    points: [
+      'To become one of Nigeria\'s top IT consultancy firms in Nigeria.',
+      'To be recognised for our innovation, delivery excellence, and social impact.',
+    ]
+  }
+];
 
-  const sections = [
-    {
-      icon: Target,
-      title: 'Our Mission',
-      gradient: 'from-purple-700 to-purple-600',
-      borderColor: 'border-purple-700/30 hover:border-purple-600/50',
-      content: missionText,
-      isList: false,
-      checkColor: 'text-purple-500'
-    },
-    {
-      icon: Eye,
-      title: 'Our Vision',
-      gradient: 'from-purple-600 to-purple-500',
-      borderColor: 'border-purple-600/30 hover:border-purple-500/50',
-      content: visionText,
-      isList: false,
-      checkColor: 'text-purple-400'
-    },
-    {
-      icon: Award,
-      title: 'Our Core Values',
-      gradient: 'from-purple-700 to-purple-800',
-      borderColor: 'border-purple-700/30 hover:border-purple-600/50',
-      content: valuePoints,
-      isList: true,
-      checkColor: 'text-purple-500'
-    }
-  ];
+const sections = [
+  {
+    icon: Target,
+    title: 'Our Mission',
+    gradient: 'from-purple-700 to-purple-600',
+    borderColor: 'border-purple-700/30 hover:border-purple-600/50',
+    content: missionText,
+    isList: false,
+    checkColor: 'text-purple-500'
+  },
+  {
+    icon: Eye,
+    title: 'Our Vision',
+    gradient: 'from-purple-600 to-purple-500',
+    borderColor: 'border-purple-600/30 hover:border-purple-500/50',
+    content: visionText,
+    isList: false,
+    checkColor: 'text-purple-400'
+  },
+  {
+    icon: Award,
+    title: 'Our Core Values',
+    gradient: 'from-purple-700 to-purple-800',
+    borderColor: 'border-purple-700/30 hover:border-purple-600/50',
+    content: valuePoints,
+    isList: true,
+    checkColor: 'text-purple-500'
+  },
+  {
+    icon: Award,
+    title: 'Our Ambition',
+    gradient: 'from-purple-700 to-purple-800',
+    borderColor: 'border-purple-700/30 hover:border-purple-600/50',
+    content: Ambition[0],
+    isList: 'ambition',
+    checkColor: 'text-purple-500'
+  }
+];
 
   return (
     <div className="bg-black py-16 px-4">
@@ -86,18 +104,32 @@ const MissionVisionValues = () => {
                     </div>
                     <div className={`h-1 w-20 bg-gradient-to-r ${section.gradient} mb-6`}></div>
                     
-                    {section.isList ? (
-                      <div className="space-y-3">
-                        {section.content.map((point, idx) => (
-                          <div key={idx} className="flex items-start space-x-3">
-                            <CheckCircle2 className={`w-5 h-5 ${section.checkColor} flex-shrink-0 mt-1`} />
-                            <p className="text-gray-300 leading-relaxed">{point}</p>
-                          </div>
-                        ))}
-                      </div>
-                    ) : (
-                      <p className="text-gray-300 text-lg leading-relaxed">{section.content}</p>
-                    )}
+                 {section.isList === 'ambition' ? (
+  <div className="space-y-4">
+    <p className="text-gray-300 text-lg leading-relaxed mb-4">
+      {section.content.description}
+    </p>
+    <div className="space-y-3">
+      {section.content.points.map((point, idx) => (
+        <div key={idx} className="flex items-start space-x-3">
+          <CheckCircle2 className={`w-5 h-5 ${section.checkColor} flex-shrink-0 mt-1`} />
+          <p className="text-gray-300 leading-relaxed">{point}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+) : section.isList ? (
+  <div className="space-y-3">
+    {section.content.map((point, idx) => (
+      <div key={idx} className="flex items-start space-x-3">
+        <CheckCircle2 className={`w-5 h-5 ${section.checkColor} flex-shrink-0 mt-1`} />
+        <p className="text-gray-300 leading-relaxed">{point}</p>
+      </div>
+    ))}
+  </div>
+) : (
+  <p className="text-gray-300 text-lg leading-relaxed">{section.content}</p>
+)}
                   </div>
                 </div>
               );

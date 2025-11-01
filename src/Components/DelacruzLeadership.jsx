@@ -36,7 +36,7 @@ export default function DelacruzLeadership() {
               <div className="text-purple-700 mb-4">
                 <Users size={40} />
               </div>
-              <h3 className="text-2xl font-bold text-purple-700 mb-3">Discover</h3>
+              <h3 className="text-2xl font-bold text-purple-700 mb-3">Discovery</h3>
               <p className="text-gray-300">
                 Understand the business, its pain points, and its goals.
               </p>
@@ -56,7 +56,7 @@ export default function DelacruzLeadership() {
               <div className="text-purple-700 mb-4">
                 <Target size={40} />
               </div>
-              <h3 className="text-2xl font-bold text-purple-700 mb-3">Deliver</h3>
+              <h3 className="text-2xl font-bold text-purple-700 mb-3">Delivery</h3>
               <p className="text-gray-300">
                 With agility, ensuring measurable value at every phase.
               </p>

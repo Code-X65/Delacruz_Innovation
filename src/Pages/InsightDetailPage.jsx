@@ -174,18 +174,9 @@ const InsightDetailPage = () => {
             {/* Divider */}
             <div className="border-t-2 border-gray-800 my-12"></div>
 
-            {/* Second Section */}
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">
-              How should and could it is time for you?
-            </h2>
+       
 
-            <p className="text-lg leading-relaxed mb-8 text-gray-300">
-              Lorem ipsum dolor sit amet consectetur. Tellus non biffer argest ut maxis. Proin morbis quam priftiks. At neget nifin dugnism tincidunt. Lorem ipsum dolor sit amet consectetur. Tellus non biffer argest ut maxis. Proin morbis quam priftiks. At neget nifin dugnism tincidunt enira tincidunt enin ullancorper hendrerit lorem. Ut donec elit tincidunt vestibulum. Magna rhofus consectetur ar ausent illas. Rhofus erat quisque ut pellentesque nec Sitera mafus.
-            </p>
-
-            <p className="text-lg leading-relaxed mb-8 text-gray-300">
-              Diam turpis nunc vel turpis lectus mattis. Magna rhofus consectetrut ar ausent illas. Rhofus erat quisque ut pellentesque nec niitra mafus. A tortor tinci consectetrer hendreerit accumsan. Placeret pulvinar ultrices at urna elits vestibulum hendrerit accumsan.
-            </p>
+          
 
             {/* About the Author Section */}
             <div className="bg-gray-900 rounded-lg p-6 sm:p-8 lg:p-10 my-12 border border-gray-800">
@@ -259,7 +250,7 @@ const InsightDetailPage = () => {
           </p>
           <Link to="/consultation_form" className="inline-block">
             <button className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105">
-              Book A Free 30 mins Discovery Call
+              Book A Free Discovery Call
             </button>
           </Link>
         </div>

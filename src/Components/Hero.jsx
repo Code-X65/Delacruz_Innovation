@@ -141,7 +141,7 @@ const Hero = () => {
                 {/* Button Background Animation */}
                 <span className="absolute inset-0 bg-purple-800 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
                 
-                <span className="relative z-10">Get A Free 30 min Discovery Call</span>
+                <span className="relative z-10">Get A Free Discovery Call</span>
                 
                 <ArrowRight className="relative z-10 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform duration-300" />
                 

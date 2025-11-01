@@ -72,7 +72,7 @@ const BrandEcoSystem = () => {
             Delacruz Innovations is your trusted partner for digital evolution.
           </p>
           <p className="text-2xl font-bold text-white mb-8">
-            Let's build tomorrow,  today!
+            Innovate tomorrow, Build today!
           </p>
           <button className="bg-purple-700 hover:bg-purple-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors">
             Work with Us

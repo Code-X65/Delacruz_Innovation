@@ -25,10 +25,10 @@ const Careers = () => {
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Looking for your{' '}
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+              We are Not Just Building Businesses,{' '}
               <span className="bg-gradient-to-r from-purple-600 via-purple-500 to-purple-400 bg-clip-text text-transparent">
-                next move?
+                We’re Building People. Join the Movement!
               </span>
             </h1>
 
@@ -98,7 +98,7 @@ const Careers = () => {
           }`} style={{ transitionDelay: '300ms' }}>
             <div className="relative rounded-2xl overflow-hidden group">
               <img 
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&fit=crop" 
+                src="https://plus.unsplash.com/premium_photo-1661771773771-a093c948ba92?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2FyZWVyfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500" 
                 alt="Modern Office Space"
                 className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
               />

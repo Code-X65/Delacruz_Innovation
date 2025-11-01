@@ -4,6 +4,7 @@ import BackgroundImage from '../assets/Images/studyhero.png'
 import Blog01 from '../assets/Images/blog1.png'
 import Blog02 from '../assets/Images/blog02.png'
 import Article from '../assets/Images/articlecase.png'
+import { Link } from 'react-router-dom'
 
 const Casestudy = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -14,9 +15,9 @@ const Casestudy = () => {
   const cardsRef = useRef([]);
 
   const cards = [
-    { title: 'Case Study', subtitle: 'Expanding economic opportunities for rural farmers in East Africa', description: 'Leading Fin-tech drives end to end transformation for profitable growth.', image: Blog01 },
-    { title: 'Article', subtitle: 'The future of digital banking', description: 'Leading Fin-tech drives end to end transformation for profitable growth.', image: Article },
-    { title: 'Case Study', subtitle: 'Transforming healthcare delivery', description: 'Leading Fin-tech drives end to end transformation for profitable growth.', image: Blog02 }
+    { title: 'About Us', subtitle: 'Expanding economic opportunities for rural farmers in East Africa', description: 'Shaping Africa’s Digital Future One Solution at a Time.', image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600', link:'/about' },
+    { title: 'Insights', subtitle: 'The future of digital banking', description: 'Expert analysis on strategic transformation', image: 'https://images.unsplash.com/photo-1535378620166-273708d44e4c?w=600', link:'/insights'  },
+    { title: 'Case Study', subtitle: 'Transforming healthcare delivery', description: 'NHS England – Replatforming & CRM Modernisation', image: Blog02, link:'/case-studies' }
   ];
 
   // Auto-slide effect
@@ -84,15 +85,15 @@ const Casestudy = () => {
               Case Study
             </h1>
             <p className={`text-lg md:text-xl mb-6 max-w-2xl transition-all duration-500 ${isHovered ? 'opacity-100 scale-102' : 'opacity-70'}`}>
-              Leading fin-tech drives end to end transformation for profitable growth
+              Leading Fin-tech drives end to end transformation for profitable growth.
             </p>
             <div className={`transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-70'}`}>
-              <button className="group relative inline-flex items-center gap-3 bg-black text-white px-8 py-4 md:px-6 md:py-3 rounded-lg font-semibold text-base md:text-lg shadow-lg hover:shadow-2xl hover:shadow-[#4a90b8]/50 transition-all duration-500 hover:scale-105 overflow-hidden">
+              <Link to='/case-studies' className="group relative inline-flex items-center gap-3 bg-black text-white px-8 py-4 md:px-6 md:py-3 rounded-lg font-semibold text-base md:text-lg shadow-lg hover:shadow-2xl hover:shadow-[#4a90b8]/50 transition-all duration-500 hover:scale-105 overflow-hidden">
                 <span className="absolute inset-0 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
                 <span className="relative z-10">Learn More </span>
                 <ArrowRight className="relative z-10 w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform duration-300" />
                 <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></span>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -108,6 +109,7 @@ const Casestudy = () => {
                 key={index}
                 className='min-w-full px-2'
               >
+                <Link to ={card.link}>
                 <div 
                   className='relative h-[25rem] rounded-lg overflow-hidden'
                   style={{ backgroundImage: `url(${card.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
@@ -122,6 +124,7 @@ const Casestudy = () => {
                     <ArrowRight className='w-5 h-5' />
                   </div>
                 </div>
+                </Link>
               </div>
             ))}
           </div>
@@ -144,6 +147,7 @@ const Casestudy = () => {
         <div className='hidden md:block mx-2'>
           <div className='mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-4'>
             {cards.map((card, index) => (
+              <Link to ={card.link}>
               <div 
                 key={index}
                 ref={(el) => (cardsRef.current[index] = el)}
@@ -163,6 +167,7 @@ const Casestudy = () => {
                   </p>
                 </div>
               </div>
+              </Link>
             ))}
           </div>
         </div>
