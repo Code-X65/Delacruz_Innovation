@@ -37,7 +37,7 @@ const HelpOurClient = () => {
       icon: <Database className="w-12 h-12" />,
       title: 'IT Consulting & Change Management – Strategy, migration, and user adoption that stick.',
       description:
-        'Protect your digital assets and data integrity with advanced security frameworks and proactive threat management.',
+        'Enhance organizational performance and efficiency through strategic planning, process optimization, and leadership development.',
       image:
         'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop',
       gradient: 'from-[#6bb3d8] to-[#87ceeb]',

@@ -125,7 +125,7 @@ const ITConsultantForm = () => {
           </p>
           <div className="bg-purple-700/20 border border-purple-700 rounded-lg p-6 mb-8">
             <p className="text-purple-300 text-sm">
-              Check your email/WhatsApp for confirmation and next steps.
+              Check your email for confirmation and next steps.
             </p>
           </div>
           <button
@@ -231,14 +231,14 @@ const ITConsultantForm = () => {
 
               <div>
                 <label className="block text-white font-medium mb-2">
-                  Email or WhatsApp Number <span className="text-purple-500">*</span>
+                  Email  <span className="text-purple-500">*</span>
                 </label>
                 <input
-                  type="text"
+                  type="email"
                   value={formData.contact}
                   onChange={(e) => handleInputChange('contact', e.target.value)}
                   className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-purple-700 focus:ring-2 focus:ring-purple-700/50"
-                  placeholder="john@example.com or +234 XXX XXX XXXX"
+                  placeholder="john@example.com"
                 />
                 {errors.contact && <p className="text-red-400 text-sm mt-1">{errors.contact}</p>}
               </div>

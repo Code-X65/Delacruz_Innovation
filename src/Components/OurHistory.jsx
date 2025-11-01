@@ -8,7 +8,7 @@ const OurHistory = () => {
   }, []);
 
   return (
-    <div className="bg-black py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-black py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className={`text-center mb-12 transition-all duration-1000 ${

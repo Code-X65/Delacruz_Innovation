@@ -191,14 +191,7 @@ const allQuestions = [
 const DeChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
-  const [messages, setMessages] = useState([
-    {
-      id: 1,
-      text: "Hello 👋! Welcome to Delacruz Innovations – your partner in digital transformation, IT solutions, and business growth across Nigeria. I'm here to guide you, answer your questions, and help you explore our services. How can I assist you today? You can ask about our services, book a consultation, or learn more about us.",
-      sender: 'bot',
-      timestamp: new Date()
-    }
-  ]);
+   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [suggestedQuestions, setSuggestedQuestions] = useState([]);
@@ -306,31 +299,42 @@ const DeChatbot = () => {
 What would you like to know?`;
   };
 
-  const handleSendMessage = () => {
-    if (inputValue.trim() === '') return;
+const handleSendMessage = () => {
+  if (inputValue.trim() === '') return;
 
-    const userMessage = {
-      id: messages.length + 1,
-      text: inputValue,
-      sender: 'user',
+  // Add welcome message if this is the first message
+  if (messages.length === 0) {
+    const welcomeMessage = {
+      id: 1,
+      text: "Hello 👋! Welcome to Delacruz Innovations – your partner in digital transformation, IT solutions, and business growth across Nigeria. I'm here to guide you, answer your questions, and help you explore our services. How can I assist you today? You can ask about our services, book a consultation, or learn more about us.",
+      sender: 'bot',
       timestamp: new Date()
     };
+    setMessages([welcomeMessage]);
+  }
 
-    setMessages(prev => [...prev, userMessage]);
-    setInputValue('');
-    setIsTyping(true);
-
-    setTimeout(() => {
-      const botMessage = {
-        id: messages.length + 2,
-        text: getBotResponse(inputValue),
-        sender: 'bot',
-        timestamp: new Date()
-      };
-      setMessages(prev => [...prev, botMessage]);
-      setIsTyping(false);
-    }, 1200);
+  const userMessage = {
+    id: messages.length + 1,
+    text: inputValue,
+    sender: 'user',
+    timestamp: new Date()
   };
+
+  setMessages(prev => [...prev, userMessage]);
+  setInputValue('');
+  setIsTyping(true);
+
+  setTimeout(() => {
+    const botMessage = {
+      id: messages.length + 2,
+      text: getBotResponse(inputValue),
+      sender: 'bot',
+      timestamp: new Date()
+    };
+    setMessages(prev => [...prev, botMessage]);
+    setIsTyping(false);
+  }, 1200);
+};
 
   const handleSuggestedQuestion = (question) => {
     setInputValue(question);
@@ -428,21 +432,23 @@ What would you like to know?`;
                 <div ref={messagesEndRef} />
               </div>
 
-              {/* Suggested Questions - Always visible */}
-              <div className="p-3 bg-white border-t border-gray-200">
-                <p className="text-xs text-gray-600 mb-2 font-medium">Popular Questions:</p>
-                <div className="flex flex-wrap gap-2">
-                  {suggestedQuestions.map((question, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => handleSuggestedQuestion(question)}
-                      className="text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-full transition-colors border border-gray-300"
-                    >
-                      {question}
-                    </button>
-                  ))}
-                </div>
-              </div>
+ {/* Suggested Questions - Hide after first message */}
+{messages.length === 0 && (
+  <div className="p-3 bg-white border-t border-gray-200">
+    <p className="text-xs text-gray-600 mb-2 font-medium">Popular Questions:</p>
+    <div className="flex flex-wrap gap-2">
+      {suggestedQuestions.map((question, idx) => (
+        <button
+          key={idx}
+          onClick={() => handleSuggestedQuestion(question)}
+          className="text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-full transition-colors border border-gray-300"
+        >
+          {question}
+        </button>
+      ))}
+    </div>
+  </div>
+)}
 
               {/* Input */}
               <div className="p-4 bg-white border-t border-gray-200">

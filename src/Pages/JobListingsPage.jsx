@@ -13,10 +13,13 @@ const JobListingsPage = ({ jobsData }) => {
   });
 
   // Extract unique values for dropdowns
-  const uniqueLocations = [...new Set(jobsData.flatMap(job => job.locations))].sort();
-  const uniqueIndustries = [...new Set(jobsData.flatMap(job => job.industries))].sort();
-  const uniqueCapabilities = [...new Set(jobsData.flatMap(job => job.capabilities))].sort();
-  const uniqueTypes = [...new Set(jobsData.map(job => job.type))].sort();
+ const uniqueLocations = ['Africa', 'Asia', 'Central & South America', 'Europe', 'North America', 'Oceania'];
+  const uniqueIndustries = ['Aerospace & Defence', 'Agriculture', 'Automotive & Assembly', 'capital Projects & infastucture', 'Chemicals', 'Consumer Packaged Goods', 'Electrical Power and Natural Gas',
+    'Financial Services', 'Healthcare System & Services', 'High Tech', 'Infrastructure', 'Life Science',
+    'Media & Entertiainment ', 'Metal & Mining ', 'Oil & Gas', 'Paper & Forest Products', 'Private Capital', 'Public Sector', 'Retail', 'Semiconductos', 'Social Sector', 'Telecommunications', 'Travel, Transport & Logisics'
+  ];
+  const uniqueCapabilities = ['Firm Administration', 'Maketing & Sales', 'Oprations', 'Organizational Structure', 'Risk & Resilience', 'Strategy & coperate finance', 'Sustanability', 'Technology', 'Transformation', ];
+  const uniqueTypes = ['Full-time', 'Part-time', 'Contract', 'Internship'];
 
   const filteredJobs = jobsData.filter(job => {
     const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -61,7 +64,7 @@ const JobListingsPage = ({ jobsData }) => {
                 onChange={(e) => setFilters({...filters, location: e.target.value})}
                 className="w-full bg-white text-gray-700 rounded-lg px-4 py-3 pr-10 text-sm font-medium appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-purple-400 focus:bg-purple-50 hover:bg-gray-50 transition-all shadow-sm"
               >
-                <option value="" className="text-gray-500">📍 All Locations</option>
+                <option value="" className="text-gray-500"> All Locations</option>
                 {uniqueLocations.map((location) => (
                   <option key={location} value={location} className="text-gray-700 py-2">
                     {location}
@@ -78,7 +81,7 @@ const JobListingsPage = ({ jobsData }) => {
                 onChange={(e) => setFilters({...filters, interests: e.target.value})}
                 className="w-full bg-white text-gray-700 rounded-lg px-4 py-3 pr-10 text-sm font-medium appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-purple-400 focus:bg-purple-50 hover:bg-gray-50 transition-all shadow-sm"
               >
-                <option value="" className="text-gray-500">✨ All Interests</option>
+                <option value="" className="text-gray-500"> All Interests</option>
                 {uniqueTypes.map((type) => (
                   <option key={type} value={type} className="text-gray-700 py-2">
                     {type}
@@ -95,7 +98,7 @@ const JobListingsPage = ({ jobsData }) => {
                 onChange={(e) => setFilters({...filters, industries: e.target.value})}
                 className="w-full bg-white text-gray-700 rounded-lg px-4 py-3 pr-10 text-sm font-medium appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-purple-400 focus:bg-purple-50 hover:bg-gray-50 transition-all shadow-sm"
               >
-                <option value="" className="text-gray-500">🏢 All Industries</option>
+                <option value="" className="text-gray-500"> All Industries</option>
                 {uniqueIndustries.map((industry) => (
                   <option key={industry} value={industry} className="text-gray-700 py-2">
                     {industry}
@@ -112,7 +115,7 @@ const JobListingsPage = ({ jobsData }) => {
                 onChange={(e) => setFilters({...filters, capabilities: e.target.value})}
                 className="w-full bg-white text-gray-700 rounded-lg px-4 py-3 pr-10 text-sm font-medium appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-purple-400 focus:bg-purple-50 hover:bg-gray-50 transition-all shadow-sm"
               >
-                <option value="" className="text-gray-500">🎯 All Capabilities</option>
+                <option value="" className="text-gray-500"> All Capabilities</option>
                 {uniqueCapabilities.map((capability) => (
                   <option key={capability} value={capability} className="text-gray-700 py-2">
                     {capability}
