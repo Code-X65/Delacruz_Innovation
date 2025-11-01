@@ -185,7 +185,7 @@ const ITConsultantForm = () => {
           <div className="flex justify-between text-sm text-gray-400">
             <span>Contact</span>
             <span>Needs</span>
-            <span>Timeline</span>
+            <span>Expectations</span>
           </div>
         </div>
 
@@ -196,7 +196,7 @@ const ITConsultantForm = () => {
             <div className="space-y-6">
               <div>
                 <h2 className="text-2xl font-bold text-white mb-2">
-                  Step 1: Quick Contact
+                 Quick Contact
                 </h2>
                 <p className="text-gray-400">Let's start with the basics</p>
               </div>
@@ -257,7 +257,7 @@ const ITConsultantForm = () => {
             <div className="space-y-6">
               <div>
                 <h2 className="text-2xl font-bold text-white mb-2">
-                  Step 2: Identify the Need
+                 Identify the Need
                 </h2>
                 <p className="text-gray-400">Help us understand your goals</p>
               </div>
@@ -332,7 +332,7 @@ const ITConsultantForm = () => {
             <div className="space-y-6">
               <div>
                 <h2 className="text-2xl font-bold text-white mb-2">
-                  Step 3: Set Expectations
+                  Set Expectations
                 </h2>
                 <p className="text-gray-400">When would you like to get started?</p>
               </div>
@@ -387,7 +387,7 @@ const ITConsultantForm = () => {
 
               <div className="bg-purple-700/20 border border-purple-700 rounded-lg p-4">
                 <p className="text-purple-300 text-sm">
-                  🚀 You'll hear from one of our consultants within 24 hours to discuss your business goals.
+                  🚀 You'll hear from one of our consultants within a working day to discuss your business goals.
                 </p>
               </div>
 

@@ -344,12 +344,12 @@ const ApplicationPage = ({ jobsData }) => {
             >
               View more jobs
             </Link>
-            <button
+            {/* <button
               onClick={() => setStatus('')}
               className="flex-1 px-6 py-2.5 bg-gray-100 text-gray-700 rounded-lg font-medium text-sm hover:bg-gray-200 transition-colors"
             >
               Close
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
