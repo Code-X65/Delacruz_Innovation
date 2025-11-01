@@ -386,7 +386,7 @@ What would you like to know?`;
               </div>
               <div>
                 <h3 className="font-semibold text-lg">Amari</h3>
-                <p className="text-xs text-blue-100">Online - We're here to help</p>
+                <p className="text-xs text-blue-100">Online - I am here to help</p>
               </div>
             </div>
             <div className="flex items-center space-x-2">
