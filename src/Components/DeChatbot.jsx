@@ -191,10 +191,11 @@ const allQuestions = [
 const DeChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
-   const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [suggestedQuestions, setSuggestedQuestions] = useState([]);
+  const [hasInteracted, setHasInteracted] = useState(false);
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
   const rotationIntervalRef = useRef(null);
@@ -209,7 +210,7 @@ const DeChatbot = () => {
     return newArray;
   };
 
-  // Get 7 random questions
+  // Get 5 random questions
   const getRandomQuestions = () => {
     const shuffled = shuffleArray(allQuestions);
     return shuffled.slice(0, 5);
@@ -217,10 +218,8 @@ const DeChatbot = () => {
 
   // Initialize and rotate questions
   useEffect(() => {
-    // Set initial questions
     setSuggestedQuestions(getRandomQuestions());
 
-    // Rotate every 20 seconds
     rotationIntervalRef.current = setInterval(() => {
       setSuggestedQuestions(getRandomQuestions());
     }, 20000);
@@ -240,9 +239,26 @@ const DeChatbot = () => {
     scrollToBottom();
   }, [messages]);
 
+  // Show welcome message when chat opens
   useEffect(() => {
     if (isOpen && !isMinimized) {
       inputRef.current?.focus();
+      
+      // Show welcome message only once when chat first opens
+      if (!hasInteracted && messages.length === 0) {
+        setIsTyping(true);
+        setTimeout(() => {
+          const welcomeMessage = {
+            id: 1,
+            text: "👋 Hello! I'm Amari, your virtual assistant at Delacruz Innovations. I'm here to help you explore our solutions, answer your questions, and guide you every step of the way. How can I assist you today?",
+            sender: 'bot',
+            timestamp: new Date()
+          };
+          setMessages([welcomeMessage]);
+          setIsTyping(false);
+          setHasInteracted(true);
+        }, 800);
+      }
     }
   }, [isOpen, isMinimized]);
 
@@ -252,7 +268,7 @@ const DeChatbot = () => {
     
     // Greetings
     if (/^(hello|hi|hey|greetings|good morning|good afternoon|good evening)/.test(lowerMessage)) {
-      return "Hello! I'm here to help you learn more about Delacruz Innovations. What would you like to know?";
+      return "👋 Hello! I'm Amari, your virtual assistant at Delacruz Innovations. I'm here to help you explore our solutions, answer your questions, and guide you every step of the way. How can I assist you today?";
     }
     
     // Thanks
@@ -299,42 +315,31 @@ const DeChatbot = () => {
 What would you like to know?`;
   };
 
-const handleSendMessage = () => {
-  if (inputValue.trim() === '') return;
+  const handleSendMessage = () => {
+    if (inputValue.trim() === '') return;
 
-  // Add welcome message if this is the first message
-  if (messages.length === 0) {
-    const welcomeMessage = {
-      id: 1,
-      text: "Hello 👋! Welcome to Delacruz Innovations – your partner in digital transformation, IT solutions, and business growth across Nigeria. I'm here to guide you, answer your questions, and help you explore our services. How can I assist you today? You can ask about our services, book a consultation, or learn more about us.",
-      sender: 'bot',
+    const userMessage = {
+      id: messages.length + 1,
+      text: inputValue,
+      sender: 'user',
       timestamp: new Date()
     };
-    setMessages([welcomeMessage]);
-  }
 
-  const userMessage = {
-    id: messages.length + 1,
-    text: inputValue,
-    sender: 'user',
-    timestamp: new Date()
+    setMessages(prev => [...prev, userMessage]);
+    setInputValue('');
+    setIsTyping(true);
+
+    setTimeout(() => {
+      const botMessage = {
+        id: messages.length + 2,
+        text: getBotResponse(inputValue),
+        sender: 'bot',
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, botMessage]);
+      setIsTyping(false);
+    }, 1200);
   };
-
-  setMessages(prev => [...prev, userMessage]);
-  setInputValue('');
-  setIsTyping(true);
-
-  setTimeout(() => {
-    const botMessage = {
-      id: messages.length + 2,
-      text: getBotResponse(inputValue),
-      sender: 'bot',
-      timestamp: new Date()
-    };
-    setMessages(prev => [...prev, botMessage]);
-    setIsTyping(false);
-  }, 1200);
-};
 
   const handleSuggestedQuestion = (question) => {
     setInputValue(question);
@@ -355,10 +360,14 @@ const handleSendMessage = () => {
       {!isOpen ? (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center group"
+          className="bg-white hover:shadow-xl rounded-full p-1 shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center group border-4 border-blue-600"
           aria-label="Open chat"
         >
-          <MessageCircle size={28} />
+          <img 
+            src="https://api.deepai.org/job-view-file/3ee4ca08-a15a-4de7-9164-23b5785b7c1c/outputs/output.jpg" 
+            alt="Amari Avatar"
+            className="w-14 h-14 rounded-full object-cover"
+          />
           <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center animate-pulse">
             1
           </span>
@@ -368,11 +377,15 @@ const handleSendMessage = () => {
           {/* Header */}
           <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="bg-white/20 rounded-full p-2">
-                <MessageCircle size={20} />
+              <div className="bg-white rounded-full p-0.5">
+                <img 
+                  src="https://api.deepai.org/job-view-file/3ee4ca08-a15a-4de7-9164-23b5785b7c1c/outputs/output.jpg" 
+                  alt="Amari Avatar"
+                  className="w-10 h-10 rounded-full object-cover"
+                />
               </div>
               <div>
-                <h3 className="font-semibold text-lg">Delacruz Innovations</h3>
+                <h3 className="font-semibold text-lg">Amari</h3>
                 <p className="text-xs text-blue-100">Online - We're here to help</p>
               </div>
             </div>
@@ -432,23 +445,23 @@ const handleSendMessage = () => {
                 <div ref={messagesEndRef} />
               </div>
 
- {/* Suggested Questions - Hide after first message */}
-{messages.length === 0 && (
-  <div className="p-3 bg-white border-t border-gray-200">
-    <p className="text-xs text-gray-600 mb-2 font-medium">Popular Questions:</p>
-    <div className="flex flex-wrap gap-2">
-      {suggestedQuestions.map((question, idx) => (
-        <button
-          key={idx}
-          onClick={() => handleSuggestedQuestion(question)}
-          className="text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-full transition-colors border border-gray-300"
-        >
-          {question}
-        </button>
-      ))}
-    </div>
-  </div>
-)}
+              {/* Suggested Questions - Show only with welcome message */}
+              {messages.length === 1 && (
+                <div className="p-3 bg-white border-t border-gray-200">
+                  <p className="text-xs text-gray-600 mb-2 font-medium">Popular Questions:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {suggestedQuestions.map((question, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => handleSuggestedQuestion(question)}
+                        className="text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-full transition-colors border border-gray-300"
+                      >
+                        {question}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Input */}
               <div className="p-4 bg-white border-t border-gray-200">
