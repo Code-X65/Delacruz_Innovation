@@ -84,13 +84,13 @@ const handleSubmit = (e) => {
     {
       icon: Phone,
       title: 'Call Us',
-      details: '+234 (0) 123 456 7890',
-      link: 'tel:+2340123456789'
+      details: '234 9052765358',
+      link: 'tel:+2349052765358'
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      details: '123 Business District, Lagos, Nigeria',
+      details: ' 29A, Salimonu Ayinde Street. Lagos, Nigeria',
       link: '#'
     },
     {
@@ -253,43 +253,7 @@ const handleSubmit = (e) => {
               );
             })}
 
-            {/* Social Links */}
-            <div className="bg-gradient-to-br from-purple-950/30 to-black border border-purple-700/30 rounded-2xl p-6">
-              <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
-                <Globe className="w-5 h-5 text-purple-400" />
-                Connect With Us
-              </h3>
-              <div className="flex gap-3">
-                <a
-                  href="#"
-                  className="w-10 h-10 bg-purple-700/30 hover:bg-purple-700 border border-purple-700/50 rounded-lg flex items-center justify-center text-purple-400 hover:text-white transition-all duration-300"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="w-5 h-5" />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 bg-purple-700/30 hover:bg-purple-700 border border-purple-700/50 rounded-lg flex items-center justify-center text-purple-400 hover:text-white transition-all duration-300"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 bg-purple-700/30 hover:bg-purple-700 border border-purple-700/50 rounded-lg flex items-center justify-center text-purple-400 hover:text-white transition-all duration-300"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 bg-purple-700/30 hover:bg-purple-700 border border-purple-700/50 rounded-lg flex items-center justify-center text-purple-400 hover:text-white transition-all duration-300"
-                  aria-label="Youtube"
-                >
-                  <Youtube className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
+
           </div>
           {/* Status Modal */}
 {status && (

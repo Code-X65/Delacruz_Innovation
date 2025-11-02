@@ -364,7 +364,7 @@ What would you like to know?`;
           aria-label="Open chat"
         >
           <img 
-            src="https://api.deepai.org/job-view-file/3ee4ca08-a15a-4de7-9164-23b5785b7c1c/outputs/output.jpg" 
+            src="https://i.pravatar.cc/150?img=47" 
             alt="Amari Avatar"
             className="w-14 h-14 rounded-full object-cover"
           />
@@ -379,7 +379,7 @@ What would you like to know?`;
             <div className="flex items-center space-x-3">
               <div className="bg-white rounded-full p-0.5">
                 <img 
-                  src="https://api.deepai.org/job-view-file/3ee4ca08-a15a-4de7-9164-23b5785b7c1c/outputs/output.jpg" 
+                  src="https://i.pravatar.cc/150?img=47" 
                   alt="Amari Avatar"
                   className="w-10 h-10 rounded-full object-cover"
                 />
